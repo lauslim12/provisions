@@ -6,7 +6,7 @@ This repository is a personal note to me if I ever get a new device in order to 
 
 First, we are going to configure accounts before doing anything.
 
-- Setup Microsoft Account and link it to the device.
+- Log in to Microsoft Account and link it to the device.
 - Install [Google Chrome](https://www.google.com/chrome/).
 - Refer to 'Manual Configurations' about Google Chrome.
 
@@ -56,17 +56,21 @@ We're done. Refer to 'Manual Configurations' for further steps.
 
 ## Manual Configurations
 
-Configure Google Chrome.
+Configure Google Chrome:
 
 - Log in to all of Google Accounts.
 - Setup Google Synchronization (Contacts, Drive, and more).
 
-Configure Git.
+Configure Git:
 
 - `git config --global user.email 'my_email'`
 - `git config --global user.name 'my_github_username'`
 - Create an access token to be used with GitHub with a certain level of access control.
 - Don't forget to use the access token when using `git push`.
+
+Configure Visual Studio Code:
+
+- Log in to Microsoft Account inside Visual Studio Code to sync all extensions and settings.
 
 ## Next Steps
 
