@@ -46,6 +46,12 @@ Ensure to always update Homebrew packages.
 - `brew upgrade`
 - `brew update`
 
+If I ever wanted to export my Homebrew.
+
+- `cd ~`
+- `brew bundle dump` will produce `Brewfile`.
+- `brew bundle` to install from `Brewfile`.
+
 We're done. Refer to 'Manual Configurations' for further steps.
 
 ## Manual Configurations
