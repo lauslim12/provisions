@@ -18,6 +18,10 @@ Then, we are going to install applications needed.
 
 ## Linux / MacOS
 
+If I'm on Mac.
+
+- `xcode-select --install`
+
 First, install Homebrew as a package manager.
 
 - Open your Terminal.
