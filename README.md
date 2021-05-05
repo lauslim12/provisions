@@ -1,31 +1,58 @@
 # Provisions
 
-This repository is a personal note to me if I ever get a new device in order to make the shifting process as swift as possible. When you got a new laptop / PC, remember to do the following.
+This repository is a personal note to me if I ever get a new device in order to make the shifting process as swift as possible. Windows and UNIX systems are divided, as they are not the same. When I got a new laptop / PC, remember to do the following.
 
 ## Windows
 
-First, we are going to configure accounts before doing anything.
+Windows systems are simple and I don't think the process could get any more straightforward than it is already. First, I am going to configure accounts before doing anything.
 
 - Log in to Microsoft Account and link it to the device.
 - Install [Google Chrome](https://www.google.com/chrome/).
-- Refer to 'Manual Configurations' about Google Chrome.
 
-Then, we are going to install applications needed.
+Then, I am are going to install applications needed.
 
 - Install essential applications, refer to Google Drive for the list of essential applications for Windows.
 - Install [Genshin Impact](https://genshin.mihoyo.com/) and login to it.
 - Install [VirtualBox Virtual Machine](https://www.virtualbox.org/wiki/Downloads) with [elementaryOS](https://elementary.io/) (if applicable).
 
-## Linux / MacOS
+For further steps, refer to 'Manual Configurations' about Google Chrome and more manual setups.
 
-If I'm on Mac.
+## UNIX Systems
+
+UNIX Systems are a bit different. To provision these devices, I am going to install CLI applications first, before installing the GUI applications. UNIX systems are divided into two: my usual elementaryOS (Ubuntu as base) and MacOS.
+
+### MacOS
+
+Get Git and install Xcode tools.
 
 - `xcode-select --install`
+
+After that is done, refer to 'Configuring Homebrew' for further steps.
+
+### Ubuntu
+
+This one's a bit different. If I were to use Ubuntu distributions in a virtual machine (VirtualBox), I had to use these commands first. If there's no virtual machine, simply skip the following commands.
+
+- `cd /media/<USERNAME>/<GUEST_ADDITIONS_CD>/`
+- `sudo sh ./VBoxLinuxAdditions.run`
+
+Replace `<USERNAME>` and `<GUEST_ADDITIONS_CD>` with the appropriate name. After the commands have been executed, turn off the VM, then restart it again to enable full screen (resize guest display). 
+
+After that (or if not using virtual machine), install Git and Build Essential.
+
+- `sudo apt install build-essential`
+- `sudo apt install git`
+
+Next, refer to 'Configuring Homebrew' for further steps.
+
+### Configuring Homebrew
 
 First, install Homebrew as a package manager.
 
 - Open your Terminal.
 - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+If running Linux, I might have to set the `brew` command to `PATH`, and I might have to install the homebrewed `gcc`. Instructions will be provided after installation.
 
 Configure Homebrew to always use the latest version, use often.
 
@@ -34,15 +61,8 @@ Configure Homebrew to always use the latest version, use often.
 
 First off, we're going to install all of the CLI tools that I will most definitely require.
 
-- `brew install git`
 - `brew install node && brew install yarn`
 - `brew install python3 && brew install pipenv`
-
-Then, we're going to install GUI applications.
-
-- `brew install --cask google-chrome`
-- `brew install --cask visual-studio-code`
-- `brew install --cask zoom`
 
 Ensure to always update Homebrew packages.
 
@@ -56,7 +76,17 @@ If I ever wanted to export my Homebrew.
 - `brew bundle dump` will produce `Brewfile`.
 - `brew bundle` to install from `Brewfile`.
 
-We're done. Refer to 'Manual Configurations' for further steps.
+We're done. Refer to 'Configuring GUI Apps in UNIX Systems' for further steps.
+
+### Configuring GUI Apps in UNIX Systems
+
+If I am on MacOS, the process is extremely straightforward. Just run Homebrew Casks.
+
+- `brew install --cask google-chrome`
+- `brew install --cask visual-studio-code`
+- `brew install --cask zoom`
+
+If I am on Linux, the process is more complicated. I have to go to their websites and install their applications manually. Similar to Windows.
 
 ## Manual Configurations
 
