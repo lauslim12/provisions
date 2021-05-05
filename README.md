@@ -41,8 +41,8 @@ Replace `<USERNAME>` and `<GUEST_ADDITIONS_CD>` with the appropriate name. After
 
 After that (or if not using virtual machine), update dependencies, install Git and Build Essential.
 
-- `sudo apt-get update`
-- `sudo apt-get upgrade`
+- `sudo apt update`
+- `sudo apt upgrade`
 - `sudo apt install build-essential`
 - `sudo apt install git`
 
