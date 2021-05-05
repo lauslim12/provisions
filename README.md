@@ -25,6 +25,7 @@ UNIX Systems are a bit different. To provision these devices, I am going to inst
 
 Get Git and install Xcode tools.
 
+- `git --version`
 - `xcode-select --install`
 
 After that is done, refer to 'Configuring Homebrew' for further steps.
@@ -36,10 +37,12 @@ This one's a bit different. If I were to use Ubuntu distributions in a virtual m
 - `cd /media/<USERNAME>/<GUEST_ADDITIONS_CD>/`
 - `sudo sh ./VBoxLinuxAdditions.run`
 
-Replace `<USERNAME>` and `<GUEST_ADDITIONS_CD>` with the appropriate name. After the commands have been executed, turn off the VM, then restart it again to enable full screen (resize guest display). 
+Replace `<USERNAME>` and `<GUEST_ADDITIONS_CD>` with the appropriate name. After the commands have been executed, turn off the VM, then restart it again to enable full screen (resize guest display).
 
-After that (or if not using virtual machine), install Git and Build Essential.
+After that (or if not using virtual machine), update dependencies, install Git and Build Essential.
 
+- `sudo apt-get update`
+- `sudo apt-get upgrade`
 - `sudo apt install build-essential`
 - `sudo apt install git`
 
@@ -52,7 +55,7 @@ First, install Homebrew as a package manager.
 - Open your Terminal.
 - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
-If running Linux, I might have to set the `brew` command to `PATH`, and I might have to install the homebrewed `gcc`. Instructions will be provided after installation.
+If running Linux, I might have to add the `brew` command to `PATH`, and I might have to install the homebrewed `gcc`. Instructions will be provided after installation.
 
 Configure Homebrew to always use the latest version, use often.
 
