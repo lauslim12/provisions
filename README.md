@@ -18,11 +18,6 @@ Then, I am going to install applications that I would possibly need.
 - Install [Drive Backup and Sync](https://www.google.com/drive/download/) and setup it to guard important folders.
 - Install Windows Terminal.
 
-Several manual configurations that are specific to Windows:
-
-- In the taskbar, change 'Search' to icon, and put Explorer -> Store -> Windows Terminal -> Chrome -> VSCode as the icons there.
-- Change theme: default Windows mode is 'Dark', default app mode is 'Light'.
-
 For further steps, refer to 'Manual Configurations' about Google Chrome and more manual setups.
 
 ## UNIX Systems
