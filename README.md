@@ -6,14 +6,22 @@ This repository is a personal note to me if I ever get a new device in order to 
 
 Windows systems are simple and I don't think the process could get any more straightforward than it is already. First, I am going to configure accounts before doing anything.
 
+- Take care of Windows Updates and Drivers first to prevent any unwanted happenings.
 - Log in to Microsoft Account and link it to the device.
 - Install [Google Chrome](https://www.google.com/chrome/).
 
-Then, I am are going to install applications needed.
+Then, I am going to install applications that I would possibly need.
 
-- Install essential applications, refer to Google Drive for the list of essential applications for Windows.
+- Install essential applications, refer to Google Drive for list of essential applications for Windows.
 - Install [Genshin Impact](https://genshin.mihoyo.com/) and login to it.
-- Install [VirtualBox Virtual Machine](https://www.virtualbox.org/wiki/Downloads) with [elementaryOS](https://elementary.io/) (if applicable).
+- Enable [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10). Alternatively, install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) with [elementaryOS](https://elementary.io/).
+- Install [Drive Backup and Sync](https://www.google.com/drive/download/) and setup it to guard important folders.
+- Install Windows Terminal.
+
+Several manual configurations that are specific to Windows:
+
+- In the taskbar, change 'Search' to icon, and put Explorer -> Store -> Windows Terminal -> Chrome -> VSCode as the icons there.
+- Change theme: default Windows mode is 'Dark', default app mode is 'Light'.
 
 For further steps, refer to 'Manual Configurations' about Google Chrome and more manual setups.
 
@@ -32,14 +40,14 @@ After that is done, refer to 'Configuring Homebrew' for further steps.
 
 ### Ubuntu
 
-This one's a bit different. If I were to use Ubuntu distributions in a virtual machine (VirtualBox), I had to use these commands first. If there's no virtual machine, simply skip the following commands.
+This one's a bit different. If I were to use Ubuntu distributions in a virtual machine (VirtualBox), I had to use these commands first. If there's no virtual machine or if I am using WSL, simply skip the following commands.
 
 - `cd /media/<USERNAME>/<GUEST_ADDITIONS_CD>/`
 - `sudo sh ./VBoxLinuxAdditions.run`
 
 Replace `<USERNAME>` and `<GUEST_ADDITIONS_CD>` with the appropriate name. After the commands have been executed, turn off the VM, then restart it again to enable full screen (resize guest display).
 
-After that (or if not using virtual machine), update dependencies, install Git and Build Essential.
+After that, I am to update dependencies, then install Git and Build Essential.
 
 - `sudo apt update`
 - `sudo apt upgrade`
@@ -52,7 +60,6 @@ Next, refer to 'Configuring Homebrew' for further steps.
 
 First, install Homebrew as a package manager.
 
-- Open your Terminal.
 - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
 If running Linux, I might have to add the `brew` command to `PATH`, and I might have to install the homebrewed `gcc`. Instructions will be provided after installation.
@@ -97,6 +104,7 @@ Configure Google Chrome:
 
 - Log in to all of Google Accounts.
 - Setup Google Synchronization (Contacts, Drive, and more).
+- Change Privacy and Security to Public DNS.
 
 Configure Git:
 
