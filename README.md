@@ -95,6 +95,7 @@ Configure Git:
 - `git config --global user.email 'my_email'`
 - `git config --global user.name 'my_github_username'`
 - Create an access token to be used with GitHub with a certain level of access control.
+- Alternatively, use [SSH to authenticate with GitHub](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 - Don't forget to use the access token when using `git push`.
 
 Configure Visual Studio Code:
