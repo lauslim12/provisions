@@ -29,8 +29,10 @@ UNIX Systems are a bit different. To provision these devices, I am going to inst
 
 Get Git and install Xcode tools.
 
-- `git --version`
-- `xcode-select --install`
+```bash
+git --version
+xcode-select --install
+```
 
 After that is done, refer to 'Configuring Homebrew' for further steps.
 
@@ -38,17 +40,21 @@ After that is done, refer to 'Configuring Homebrew' for further steps.
 
 This one's a bit different. If I were to use Ubuntu distributions in a virtual machine (VirtualBox), I had to use these commands first. If there's no virtual machine or if I am using WSL, simply skip the following commands.
 
-- `cd /media/<USERNAME>/<GUEST_ADDITIONS_CD>/`
-- `sudo sh ./VBoxLinuxAdditions.run`
+```bash
+cd /media/<USERNAME>/<GUEST_ADDITIONS_CD>/
+sudo sh ./VBoxLinuxAdditions.run
+```
 
 Replace `<USERNAME>` and `<GUEST_ADDITIONS_CD>` with the appropriate name. After the commands have been executed, turn off the VM, then restart it again to enable full screen (resize guest display).
 
 After that, I am to update dependencies, then install Git (if its not available) and Build Essential.
 
-- `sudo apt update`
-- `sudo apt upgrade`
-- `sudo apt install build-essential`
-- `sudo apt install git`
+```bash
+sudo apt update
+sudo apt upgrade
+sudo apt install build-essential
+sudo apt install git
+```
 
 Next, refer to 'Configuring Homebrew' for further steps.
 
@@ -56,28 +62,32 @@ Next, refer to 'Configuring Homebrew' for further steps.
 
 First, install Homebrew as a package manager.
 
-- `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew doctor
+```
 
 If running Linux, I might have to add the `brew` command to `PATH`, and I might have to install the homebrewed `gcc`. Instructions will be provided after installation.
 
-Configure Homebrew to always use the latest version, use often.
+I am going to install all of the CLI tools that I will require using `brew install`. Example packages I might need:
 
-- `brew update`
-- `brew doctor`
+```bash
+brew install node
+brew install yarn
+brew install python3
+```
 
-I am going to install all of the CLI tools that I will most definitely require.
-
-- `brew install node && brew install yarn`
-- `brew install python3 && brew install pipenv`
-
-Done. Refer to 'Configuring GUI Apps in UNIX Systems' for further steps.
+After this, you're done. Refer to 'Configuring GUI Apps in UNIX Systems' for further steps.
 
 ### Configuring GUI Apps in UNIX Systems
 
 If I am on MacOS, the process is extremely straightforward. Just run Homebrew Casks. For example,
 
-- `brew install --cask google-chrome`
-- `brew install --cask visual-studio-code`
+```bash
+brew install --cask google-chrome
+brew install --cask visual-studio-code
+brew install --cask docker
+```
 
 If I am on a full-blown Linux, the process is more complicated. I have to go to their websites and install their applications manually. Similar to Windows.
 
@@ -112,12 +122,15 @@ Configure Visual Studio Code:
 
 Remember to always update Homebrew packages!
 
-- `brew outdated`
-- `brew upgrade`
-- `brew update`
+```bash
+brew outdated # check for updates
+brew upgrade # upgrades packages
+brew update # updates Homebrew itself
+```
 
 If I ever wanted to export my Homebrew.
 
-- `cd ~`
-- `brew bundle dump` will produce `Brewfile`.
-- `brew bundle` to install from `Brewfile`.
+```bash
+brew bundle dump # to output dependencies into a 'Brewfile'
+brew bundle # to install from 'Brewfile'
+```
