@@ -1,0 +1,8 @@
+---
+- hosts: all
+  roles:
+    - role: homebrew
+      when: ansible_facts["distribution"] == "Darwin" or anisble_facts["distribution"] == "Ubuntu"
+
+    - role: raspberry-pi
+      when: ansible_facts["distribution"] == "Debian"
