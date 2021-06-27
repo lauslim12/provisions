@@ -1,0 +1,33 @@
+---
+- name: Install Raspberry Pi (Debian) development utilities using apt
+  become: yes
+  apt:
+    name: "{{ packages }}"
+    autoclean: yes
+    autoremove: yes
+    state: latest
+    update_cache: yes
+    upgrade: safe
+  vars:
+    packages:
+      - build-essential
+      - cargo
+      - checkinstall
+      - curl
+      - libbz2-dev
+      - libc6-dev
+      - libffi-dev
+      - libgdbm-dev
+      - libncursesw5-dev
+      - libnss3-tools
+      - libreadline-gplv2-dev
+      - libsqlite3-dev
+      - libssl-dev
+      - python3-dev
+      - tk-dev
+      - wget
+      - zlib1g-dev
+
+- name: Cleanup of apt
+  become: yes
+  command: apt clean
