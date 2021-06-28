@@ -1,8 +1,8 @@
 # Provisions
 
-This repository is a personal note to me if I ever get a new device in order to make the shifting process as swift as possible. In order to separate the concerns between personal use and development, please do not use the same device for work and personal matters (my personal preference is Windows for personal use and Unix systems for software engineering).
+This repository is a personal note to me if I ever get a new device in order to make the shifting process as swift as possible. In order to separate the concerns between personal use and development, please do not use the same device for work and personal matters (my personal preference is Windows machines for personal use and Unix systems for software engineering).
 
-The provisioning process is automated using Ansible, an Infrastructure-as-Code.
+The provisioning process is automated using [Ansible](https://www.ansible.com/), an Infrastructure-as-Code.
 
 ## Notes
 
@@ -11,8 +11,8 @@ Some notes to keep in mind before provisioning your device.
 - Make sure you get a PC with Intel processors. Homebrew (for Linux) does not support ARM processors.
 - You can ignore the above if you are provisioning a Raspberry Pi device.
 - You have to use either Darwin-based Linux, Ubuntu-based Linux, or a Debian-based Raspberry Pi.
-- I am a 'minimalist' developer, I don't really have any personal configurations other than the synchronized one in Visual Studio Code. I am content with factory settings.
-- I write both Windows and Unix systems here so I don't forget anything.
+- I am a 'minimalist' developer. I don't really have any personal configurations other than the synchronized one in Visual Studio Code. I am content with factory settings.
+- I write how I provision both Windows and Unix systems here so I don't forget anything.
 
 ## Setup - Windows
 
@@ -53,7 +53,7 @@ sudo apt upgrade
 brew install ansible
 brew install git
 
-# for apt/linux
+# for apt/linux which are unable to use homebrew
 sudo apt install ansible
 sudo apt install git
 ```
@@ -86,7 +86,7 @@ make update
 make update-linux
 ```
 
-You can use both commands in order to update both!
+You can use both commands in order to update both package managers!
 
 ## Manual Configurations
 
