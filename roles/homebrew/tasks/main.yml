@@ -27,6 +27,7 @@
       - git
       - heroku
       - node
+      - poetry
       - python3
       - redis
       - vercel-cli
