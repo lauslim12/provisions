@@ -1,7 +1,11 @@
 ---
-- name: Update Homebrew
-  command: brew update
+# Updates Homebrew to use the the latest version.
+- name: Updates and upgrades Homebrew
+  homebrew:
+    update_homebrew: yes
+    upgrade_all: yes
 
+# Installs Homebrew taps.
 - name: Install Homebrew taps
   homebrew_tap:
     name: "{{ taps }}"
@@ -10,11 +14,11 @@
     taps:
       - heroku/brew
 
+# Installs latest Homebrew command line tools.
 - name: Install command line applications using Homebrew
   homebrew:
     name: "{{ packages }}"
     state: latest
-    upgrade_all: yes
   vars:
     packages:
       - ansible
@@ -28,13 +32,12 @@
       - vercel-cli
       - wget
       - yarn
-      - zsh
 
+# Installs latest GUI applications for MacOS.
 - name: Install GUI applications using Homebrew Casks for MacOS
   homebrew_cask:
     name: "{{ applications }}"
     state: latest
-    upgrade_all: yes
   when: ansible_facts["distribution"] == "Darwin"
   vars:
     applications:
@@ -45,5 +48,6 @@
       - visual-studio-code
       - zoom
 
+# Cleans up old and cached files.
 - name: Homebrew cleanup
   command: brew cleanup

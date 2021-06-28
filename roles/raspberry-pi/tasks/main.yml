@@ -1,13 +1,15 @@
 ---
+- name: Updates and upgrades apt packages
+  become: yes
+  apt:
+    update_cache: yes
+    upgrade: safe
+
 - name: Install Raspberry Pi (Debian) development utilities using apt
   become: yes
   apt:
     name: "{{ packages }}"
-    autoclean: yes
-    autoremove: yes
     state: latest
-    update_cache: yes
-    upgrade: safe
   vars:
     packages:
       - build-essential
@@ -27,6 +29,12 @@
       - tk-dev
       - wget
       - zlib1g-dev
+
+- name: Autoremove and autoclean of apt packages
+  become: yes
+  apt:
+    autoclean: yes
+    autoremove: yes
 
 - name: Cleanup of apt
   become: yes
