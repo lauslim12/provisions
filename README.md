@@ -14,53 +14,108 @@ Some notes to keep in mind before provisioning your device.
 - I am a 'minimalist' developer. I don't really have any personal configurations other than the synchronized one in Visual Studio Code. I am content with factory settings.
 - I write how I provision both Windows and Unix systems here so I don't forget anything.
 
+## Preparations
+
+Before starting to automatically configure stuff, we have to configure our machine manually first.
+
+For Windows:
+
+- Take care of Windows Updates and Drivers first to prevent any unwanted happenings.
+- Log in to Microsoft Account, link it to the device, setup synchronizations (settings, accounts).
+
+For MacOS:
+
+- Take care of Apple Updates.
+- Log in to iCloud. Setup synchronizations and settings.
+
+For Ubuntu/Linux:
+
+- Update software using `apt`.
+
 ## Setup - Windows
 
 My personal preference is that I will try to avoid programming in Windows for separation of concerns between my personal life and my development life. Windows machines are simple and I don't think the process could get any more straightforward than it is already. I usually provision my Windows devices like the following steps.
 
-- Take care of Windows Updates and Drivers first to prevent any unwanted happenings.
-- Log in to Microsoft Account, link it to the device, setup synchronizations (settings, accounts).
 - Install [Google Chrome](https://www.google.com/chrome/).
 - Install [Drive Backup and Sync](https://www.google.com/drive/download/) and setup it to guard important folders.
 - Install games if I ever feel like playing one. Maybe [Genshin Impact](https://genshin.mihoyo.com/)?
 - Install other essential applications, refer to Google Drive for list of essential applications for Windows.
 
-## Setup - Unix
+## Setup - MacOS
 
-For my software engineering device, please follow below steps to get your device provisioned.
+For my software engineering device (should be MacOS), please follow below steps to get your device provisioned.
 
-- Install command line tools or update the system.
+- Let's configure Mac's Command Line Tools and configure Homebrew.
 
 ```bash
-# for macos
 xcode-select --install
-
-# for linux
-sudo apt update
-sudo apt upgrade
-```
-
-- If applicable, install Homebrew.
-
-```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-- Install essential packages.
-
-```bash
-# for homebrew
 brew install ansible
 brew install git
-
-# for apt/linux which are unable to use homebrew
-sudo apt install ansible
-sudo apt install git
 ```
 
 - Setup global configurations for Git. After that is done, generate [SSH key for GitHub](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). Then, [add it to your GitHub account](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). Finally, don't forget to test your connection and remember to [verify the RSA fingerprint](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/testing-your-ssh-connection).
 
 ```bash
+git config --global user.email <MY_EMAIL>
+git config --global user.name <MY_GITHUB_USERNAME>
+ssh -T git@github.com
+```
+
+- Clone repository and run Ansible.
+
+```bash
+git clone git@github.com:lauslim12/provisions.git
+cd provisions
+make setup
+```
+
+## Setup - WSL / Ubuntu
+
+Just in case I don't work on MacOS, we can also replicate the above on Ubuntu/WSL.
+
+- Let's finish up system updates first.
+
+```bash
+sudo apt update
+sudo apt upgrade
+```
+
+- Configure Homebrew and Git as above.
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install ansible
+brew install git
+git config --global user.email <MY_EMAIL>
+git config --global user.name <MY_GITHUB_USERNAME>
+ssh -T git@github.com
+```
+
+- Clone repository and run Ansible.
+
+```bash
+git clone git@github.com:lauslim12/provisions.git
+cd provisions
+make setup
+```
+
+## Setup - Raspberry Pi
+
+To configure my Raspberry Pi, we don't really need complicated stuff.
+
+- Finish up system updates.
+
+```bash
+sudo apt update
+sudo apt upgrade
+```
+
+- Prepare Ansible and Git.
+
+```bash
+sudo apt install ansible
+sudo apt install git
 git config --global user.email <MY_EMAIL>
 git config --global user.name <MY_GITHUB_USERNAME>
 ssh -T git@github.com
@@ -91,6 +146,12 @@ You can use both commands in order to update both package managers!
 ## Manual Configurations
 
 After you have configured everything in your system, it's time to do some manual works.
+
+Configure MacOS:
+
+- System Preferences -> Trackpad -> Tap to Click
+- Battery -> Show Percentage
+- Create projects folder: `mkdir Projects` and `ln -s ~/Projects ~/Desktop/Projects`.
 
 Configure Google Chrome:
 
