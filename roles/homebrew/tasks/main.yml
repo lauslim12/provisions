@@ -25,6 +25,7 @@
       - curl
       - gcc
       - git
+      - go
       - heroku
       - node
       - poetry
