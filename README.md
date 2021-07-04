@@ -30,7 +30,7 @@ For MacOS:
 
 For Ubuntu/Linux:
 
-- Update software using `apt`.
+- Update software using `sudo apt update` and `sudo apt upgrade`.
 
 ## Setup - Windows
 
@@ -74,13 +74,6 @@ make setup
 
 Just in case I don't work on MacOS, we can also replicate the above on Ubuntu/WSL.
 
-- Let's finish up system updates first.
-
-```bash
-sudo apt update
-sudo apt upgrade
-```
-
 - Configure Homebrew and Git as above.
 
 ```bash
@@ -103,13 +96,6 @@ make setup
 ## Setup - Raspberry Pi
 
 To configure my Raspberry Pi, we don't really need complicated stuff.
-
-- Finish up system updates.
-
-```bash
-sudo apt update
-sudo apt upgrade
-```
 
 - Prepare Ansible and Git.
 
