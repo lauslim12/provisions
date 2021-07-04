@@ -136,8 +136,14 @@ After you have configured everything in your system, it's time to do some manual
 Configure MacOS:
 
 - System Preferences -> Trackpad -> Tap to Click
+- System Preferences -> Dock -> Automatically Hide and Show Dock
 - Battery -> Show Percentage
+- Finder -> Preferences -> Show Home Folder in Sidebar & Show Mac
 - Create projects folder: `mkdir Projects` and `ln -s ~/Projects ~/Desktop/Projects`.
+
+Configure Windows:
+
+- Settings -> Taskbar -> Automatically Hide Taskbar in Desktop
 
 Configure Google Chrome:
 
