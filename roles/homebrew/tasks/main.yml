@@ -40,7 +40,7 @@
   homebrew_cask:
     name: "{{ applications }}"
     state: latest
-  when: ansible_facts["distribution"] == "Darwin"
+  when: ansible_facts["os_family"] == "Darwin"
   vars:
     applications:
       - docker

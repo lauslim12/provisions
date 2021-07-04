@@ -2,7 +2,7 @@
 - hosts: all
   roles:
     - role: homebrew
-      when: ansible_facts["distribution"] == "Darwin" or ansible_facts["distribution"] == "Ubuntu"
+      when: ansible_facts["os_family"] == "Darwin" or ansible_facts["distribution"] == "Ubuntu"
 
     - role: raspberry-pi
       when: ansible_facts["distribution"] == "Debian"
