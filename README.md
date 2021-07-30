@@ -140,6 +140,7 @@ Configure MacOS:
 - Battery -> Show Percentage
 - Finder -> Preferences -> Show Home Folder in Sidebar & Show Mac
 - Create projects folder: `mkdir Projects` and `ln -s ~/Projects ~/Desktop/Projects`.
+- Inside that folder, double finger -> Show View Groups -> Group By: Name -> Sort By: Snap to Grid -> Use as Defaults
 
 Configure Windows:
 
