@@ -146,6 +146,10 @@ Configure Windows:
 
 - Settings -> Taskbar -> Automatically Hide Taskbar in Desktop
 
+Configure Ubuntu:
+
+- Create projects folder: `mkdir Projects`.
+
 Configure Google Chrome:
 
 - Log in to all of Google Accounts.
