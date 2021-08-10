@@ -32,6 +32,8 @@ For Ubuntu/Linux:
 
 - Update software using `sudo apt update` and `sudo apt upgrade`.
 
+Remember that you can always not install all applications - you can comment out applications that you do not want to install before running `make setup`.
+
 ## Setup - Windows
 
 My personal preference is that I will try to avoid programming in Windows for separation of concerns between my personal life and my development life. Windows machines are simple and I don't think the process could get any more straightforward than it is already. I usually provision my Windows devices like the following steps.
@@ -165,4 +167,5 @@ Configure Visual Studio Code:
 
 - Download all of essential data that might still be used from Google Drive. Keep data backed up and updated!
 - Fetch all currently being worked on projects from GitHub. Just a simple `git clone` will suffice.
+- Don't forget to check for updates for your system at all times.
 - Check the repository every so often to update the commands and links (should be highly unlikely).
