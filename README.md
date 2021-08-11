@@ -148,9 +148,11 @@ Configure Windows:
 
 - Settings -> Taskbar -> Automatically Hide Taskbar in Desktop
 
-Configure Ubuntu:
+Configure Ubuntu / WSL:
 
 - Create projects folder: `mkdir Projects`.
+- If using WSL, install Windows Terminal for better terminal experience.
+- If using Windows Terminal: Change `StartingDirectory` to `//wsl$/Ubuntu/home/<WSL_USERNAME>`.
 
 Configure Google Chrome:
 
