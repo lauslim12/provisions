@@ -32,6 +32,7 @@ For MacOS:
 For Ubuntu/Linux:
 
 - Update software using `sudo apt update` and `sudo apt upgrade`.
+- You might have to `sudo apt install build-essential` for the `make` command.
 
 Remember that you can always not install all applications - you can comment out applications that you do not want to install before running `make setup`.
 
