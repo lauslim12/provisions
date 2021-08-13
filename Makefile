@@ -2,8 +2,8 @@
 setup:
 	ansible-playbook --diff --verbose ansible.yml -i hostfile --ask-become-pass
 
-.PHONY: update
-update:
+.PHONY: update-homebrew
+update-homebrew:
 	brew doctor
 	brew update
 	brew upgrade
@@ -17,3 +17,7 @@ update-linux:
 	sudo apt autoremove
 	sudo apt autoclean
 	sudo apt clean
+
+.PHONY: update-npm
+update-npm:
+	npm update -g
