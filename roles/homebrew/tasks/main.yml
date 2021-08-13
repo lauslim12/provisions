@@ -1,18 +1,11 @@
 ---
 # Updates Homebrew to use the the latest version.
-- name: Updates and upgrades Homebrew
-  homebrew:
-    update_homebrew: yes
-    upgrade_all: yes
+- name: Updates Homebrew
+  command: brew update
 
-# Installs Homebrew taps.
-- name: Install Homebrew taps
-  homebrew_tap:
-    name: "{{ taps }}"
-    state: present
-  vars:
-    taps:
-      - heroku/brew
+# Upgrades existing Homebrew packages, if any.
+- name: Upgrades existing Homebrew packages (if any)
+  command: brew upgrade
 
 # Installs latest Homebrew command line tools.
 - name: Install command line applications using Homebrew
@@ -21,19 +14,13 @@
     state: latest
   vars:
     packages:
-      - ansible
       - curl
       - gcc
       - git
       - go
-      - heroku
       - node
-      - poetry
       - python3
-      - redis
-      - vercel-cli
       - wget
-      - yarn
 
 # Installs latest GUI applications for MacOS.
 - name: Install GUI applications using Homebrew Casks for MacOS
@@ -45,7 +32,6 @@
     applications:
       - docker
       - google-backup-and-sync
-      - google-chrome
       - slack
       - visual-studio-code
       - zoom
@@ -53,3 +39,7 @@
 # Cleans up old and cached files.
 - name: Homebrew cleanup
   command: brew cleanup
+
+# Autoremoves old, unused dependencies.
+- name: Homebrew autoremove
+  command: brew autoremove
