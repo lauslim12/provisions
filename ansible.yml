@@ -6,3 +6,5 @@
 
     - role: raspberry-pi
       when: ansible_facts["distribution"] == "Debian"
+
+    - role: node
