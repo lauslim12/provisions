@@ -12,6 +12,7 @@ Some notes to keep in mind before provisioning your device.
 - You can ignore the above if you are provisioning a Raspberry Pi device.
 - You have to use either Darwin-based Linux, Ubuntu-based Linux, or a Debian-based Raspberry Pi.
 - I am a 'minimalist' developer. I don't really have any personal configurations other than the synchronized one in Visual Studio Code. I am content with factory settings.
+- I can use Docker if I want to use more sophisticated tools, such as databases, caches, S3 backend, web servers, etcetera. In my local machine, we keep everything as simple as possible.
 - I write how I provision both Windows and Unix systems here so I don't forget anything.
 
 ## Preparations
@@ -56,6 +57,8 @@ brew install ansible
 brew install git
 ```
 
+- Install [Google Chrome](https://www.google.com/chrome/) as a web browser.
+
 - Setup global configurations for Git. After that is done, generate [SSH key for GitHub](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). Then, [add it to your GitHub account](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). Finally, don't forget to test your connection and remember to [verify the RSA fingerprint](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/testing-your-ssh-connection).
 
 ```bash
@@ -70,6 +73,13 @@ ssh -T git@github.com
 git clone git@github.com:lauslim12/provisions.git
 cd provisions
 make setup
+```
+
+- Clean up Ansible and clean up Homebrew remains.
+
+```bash
+brew remove ansible
+make update-homebrew
 ```
 
 ## Setup - WSL / Ubuntu
@@ -93,6 +103,14 @@ ssh -T git@github.com
 git clone git@github.com:lauslim12/provisions.git
 cd provisions
 make setup
+```
+
+- Clean up Ansible and update your Linux.
+
+```bash
+brew remove ansible
+make update-homebrew
+make update-linux
 ```
 
 ## Setup - Raspberry Pi
@@ -123,10 +141,13 @@ Updating the packages can be done by typing the following command.
 
 ```bash
 # for homebrew
-make update
+make update-homebrew
 
 # for apt/linux
 make update-linux
+
+# for npm
+make update-npm
 ```
 
 You can use both commands in order to update both package managers!
