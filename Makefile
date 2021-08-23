@@ -4,11 +4,11 @@ setup:
 
 .PHONY: update-homebrew
 update-homebrew:
-	brew doctor
 	brew update
 	brew upgrade
 	brew cleanup
 	brew autoremove
+	brew doctor
 
 .PHONY: update-linux
 update-linux:

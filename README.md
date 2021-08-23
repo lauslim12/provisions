@@ -106,7 +106,7 @@ cd provisions
 make setup
 ```
 
-- Clean up Ansible and update your Linux.
+- Clean up Ansible and update your Linux and packages.
 
 ```bash
 brew remove ansible
@@ -138,7 +138,7 @@ make setup
 
 ## Update
 
-Updating the packages can be done by typing the following command.
+Updating the packages can be done by typing the following commands.
 
 ```bash
 # for homebrew
@@ -151,7 +151,7 @@ make update-linux
 make update-npm
 ```
 
-You can use both commands in order to update both package managers!
+You can use all commands in order to update all package managers!
 
 ## Manual Configurations
 
@@ -174,7 +174,6 @@ Configure Ubuntu / WSL:
 
 - Create projects folder: `mkdir Projects`.
 - If using WSL, install Windows Terminal for better terminal experience.
-- If using Windows Terminal: Change `StartingDirectory` to `//wsl$/Ubuntu/home/<WSL_USERNAME>`.
 
 Configure Google Chrome:
 
