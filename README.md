@@ -190,5 +190,6 @@ Configure Visual Studio Code:
 
 - Download all of essential data that might still be used from Google Drive. Keep data backed up and updated!
 - Fetch all currently being worked on projects from GitHub. Just a simple `git clone` will suffice.
+- Once a week, please update all dependencies by using the available commands.
 - Don't forget to check for updates for your system at all times.
 - Check the repository every so often to update the commands and links (should be highly unlikely).
