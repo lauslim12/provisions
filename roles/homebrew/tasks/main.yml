@@ -14,13 +14,11 @@
     state: latest
   vars:
     packages:
-      - curl
       - gcc
       - git
       - go
       - node
       - python3
-      - wget
 
 # Installs latest GUI applications for MacOS.
 - name: Install GUI applications using Homebrew Casks for MacOS
