@@ -29,7 +29,7 @@
   vars:
     applications:
       - docker
-      - google-backup-and-sync
+      - google-drive
       - slack
       - visual-studio-code
       - zoom
