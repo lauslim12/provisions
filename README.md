@@ -172,7 +172,7 @@ Configure Windows:
 
 Configure Ubuntu / WSL:
 
-- Create projects folder: `mkdir Projects`.
+- Create projects folder: `mkdir Projects` and `ln -s ~/Projects ~/Desktop/Projects` if required.
 - If using WSL, install Windows Terminal for better terminal experience.
 
 Configure Google Chrome:
