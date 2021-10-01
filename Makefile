@@ -20,4 +20,4 @@ update-linux:
 
 .PHONY: update-npm
 update-npm:
-	npm update -g
+	sh ./scripts/npm-upgrade.sh
