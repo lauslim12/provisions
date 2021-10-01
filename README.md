@@ -41,8 +41,8 @@ Remember that you can always not install all applications - you can comment out 
 My personal preference is that I will try to avoid programming in Windows for separation of concerns between my personal life and my development life. Windows machines are simple and I don't think the process could get any more straightforward than it is already. I usually provision my Windows devices like the following steps.
 
 - Install [Google Chrome](https://www.google.com/chrome/).
-- Install [Drive Backup and Sync](https://www.google.com/drive/download/) and setup it to guard important folders.
-- Install games if I ever feel like playing one. Maybe [Genshin Impact](https://genshin.mihoyo.com/)?
+- Install [Google Drive](https://www.google.com/drive/download/) and setup it to guard important folders.
+- Install games if I ever feel like playing one.
 - Install other essential applications, refer to Google Drive for list of essential applications for Windows.
 
 ## Setup - MacOS
