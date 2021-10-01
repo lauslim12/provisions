@@ -1,0 +1,33 @@
+{
+  // Theming, 'changeable' settings.
+  "workbench.colorTheme": "GitHub Dark",
+  "workbench.iconTheme": "material-icon-theme",
+
+  // Editor related settings.
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+
+  // JS-related settings.
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+
+  // Go-related settings.
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.tabSize": 4
+  },
+
+  // Python-related settings.
+  "python.formatting.provider": "black",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.tabSize": 4
+  }
+}
