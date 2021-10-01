@@ -116,7 +116,7 @@ make update-linux
 
 ## Setup - Raspberry Pi
 
-To configure my Raspberry Pi, we don't really need complicated stuff.
+To configure my own Raspberry Pi, we don't really need Homebrew.
 
 - Prepare Ansible and Git.
 
@@ -185,6 +185,7 @@ Configure Google Chrome:
 Configure Visual Studio Code:
 
 - Log in to Microsoft Account inside Visual Studio Code to sync all of my extensions and settings.
+- If somehow the settings are lost, you can use the exact same one in `dotfiles/.vscode/settings.json`.
 
 ## Next Steps
 
