@@ -1,9 +1,7 @@
 {
-  // Theming, 'changeable' settings.
   "workbench.colorTheme": "GitHub Dark",
   "workbench.iconTheme": "material-icon-theme",
 
-  // Editor related settings.
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
@@ -12,19 +10,28 @@
     "source.fixAll": true
   },
 
-  // JS-related settings.
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
 
-  // Go-related settings.
   "[go]": {
     "editor.defaultFormatter": "golang.go",
     "editor.tabSize": 4
   },
 
-  // Python-related settings.
   "python.formatting.provider": "black",
   "[python]": {
     "editor.defaultFormatter": "ms-python.python",
