@@ -35,6 +35,9 @@
   "python.formatting.provider": "black",
   "[python]": {
     "editor.defaultFormatter": "ms-python.python",
-    "editor.tabSize": 4
+    "editor.tabSize": 4,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
   }
 }
