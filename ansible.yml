@@ -8,3 +8,5 @@
       when: ansible_facts["distribution"] == "Debian"
 
     - role: node
+
+    - role: shell
