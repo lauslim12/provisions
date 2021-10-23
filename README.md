@@ -164,7 +164,6 @@ Configure MacOS:
 - Battery -> Show Percentage
 - Finder -> Preferences -> Show Home Folder in Sidebar & Show Mac
 - Create projects folder: `mkdir Projects` and `ln -s ~/Projects ~/Desktop/Projects`.
-- Inside that folder, double finger -> Show View Groups -> Group By: Name -> Sort By: Snap to Grid -> Use as Defaults
 
 Configure Windows:
 
@@ -185,7 +184,7 @@ Configure Google Chrome:
 Configure Visual Studio Code:
 
 - Log in to Microsoft Account inside Visual Studio Code to sync all of my extensions and settings.
-- If somehow the settings are lost, you can use the exact same one in `dotfiles/.vscode/settings.json`.
+- If somehow the settings are lost, you can use the exact same one in `dotfiles/.vscode/settings.json`. Take note of extensions though.
 
 ## Next Steps
 
