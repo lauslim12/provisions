@@ -13,6 +13,11 @@ alias l="ls -CF"
 alias la="ls -a"
 alias ll="ls -alF"
 
+# Alias for Docker.
+alias dockerfree="docker system df"
+alias dockerimages="docker images"
+alias dockerprune="docker system prune -a"
+
 # Alias for Homebrew.
 alias brewdeps="brew deps --tree --installed"
 alias brewpackages="brew leaves"
