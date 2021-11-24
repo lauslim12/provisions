@@ -14,6 +14,7 @@ alias la="ls -a"
 alias ll="ls -alF"
 
 # Alias for Docker.
+alias dockercleanvolume='docker volume rm $(docker volume ls -q)'
 alias dockerfree="docker system df"
 alias dockerimages="docker images"
 alias dockerprune="docker system prune -a"
