@@ -164,11 +164,13 @@ Configure MacOS:
 - Battery -> Show Percentage.
 - Finder -> Preferences -> Show Home Folder in Sidebar & Show Mac.
 - Create projects folder: `mkdir Projects` and `ln -s ~/Projects ~/Desktop/Projects`.
+- Allow 'night mode' to change the color of the screen to a warmer one during sunset to sunrise.
 - Tidy up dock and desktop icons.
 
 Configure Windows:
 
 - Settings -> Taskbar -> Automatically Hide Taskbar in Desktop
+- Allow 'night mode' to change the color of the screen to a warmer one during sunset to sunrise.
 - Tidy up taskbar and desktop icons.
 
 Configure Ubuntu / WSL:
