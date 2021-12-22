@@ -40,5 +40,9 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
     }
+  },
+
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
   }
 }
