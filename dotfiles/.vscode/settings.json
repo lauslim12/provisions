@@ -3,6 +3,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
 
+  "editor.bracketPairColorization.enabled": true,
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
