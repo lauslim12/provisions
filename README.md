@@ -8,12 +8,10 @@ The provisioning process is automated using [Ansible](https://www.ansible.com/),
 
 Some notes to keep in mind before provisioning your device.
 
-- Make sure you get a PC with Intel processors. Homebrew (for Linux) does not support ARM processors.
-- You can ignore the above if you are provisioning a Raspberry Pi device.
+- Make sure you get a PC with Intel processors. Homebrew (for Linux) does not support ARM processors (unless when provisioning a Raspberry Pi).
 - You have to use either Darwin-based Linux, Ubuntu-based Linux, or a Debian-based Raspberry Pi.
-- I am a 'minimalist' developer. I don't really have any personal configurations other than the synchronized one in Visual Studio Code. I am content with factory settings.
-- I can use Docker if I want to use more sophisticated tools, such as databases, caches, S3 backend, web servers, etcetera. In my local machine, we keep everything as simple as possible.
-- I write how I provision both Windows and Unix systems here so I don't forget anything.
+- I am a 'minimalist' developer. I don't really have any personal configurations other than the synchronized one in Visual Studio Code and my simple dotfiles.
+- We keep everything simple in local machine, and we can use Docker if we need more complicated tools (databases, caches, etcetera).
 
 ## Preparations
 
