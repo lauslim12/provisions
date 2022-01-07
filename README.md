@@ -6,7 +6,7 @@ The provisioning process is automated using [Ansible](https://www.ansible.com/),
 
 ## Notes
 
-Some notes to keep in mind before provisioning your device.
+Some notes to keep in mind before provisioning your device:
 
 - Make sure you get a PC with Intel processors. Homebrew (for Linux) does not support ARM processors (unless when provisioning a Raspberry Pi).
 - You have to use either Darwin-based Linux, Ubuntu-based Linux, or a Debian-based Raspberry Pi.
@@ -36,16 +36,15 @@ Remember that you can always not install all applications - you can comment out 
 
 ## Setup - Windows
 
-My personal preference is that I will try to avoid programming in Windows for separation of concerns between my personal life and my development life. Windows machines are simple and I don't think the process could get any more straightforward than it is already. I usually provision my Windows devices like the following steps.
+My personal preference is that I will try to avoid programming in Windows for separation of concerns between my personal life and my development life. Windows machines are simple and I don't think the process could get any more straightforward than it is already. I usually provision my Windows devices like the following steps:
 
 - Install [Google Chrome](https://www.google.com/chrome/).
 - Install [Google Drive](https://www.google.com/drive/download/) and setup it to guard important folders.
-- Install games if I ever feel like playing one.
 - Install other essential applications, refer to Google Drive for list of essential applications for Windows.
 
 ## Setup - MacOS
 
-For my software engineering device (should be MacOS), please follow below steps to get your device provisioned.
+For my software engineering device (should be MacOS), please follow below steps to get your device provisioned:
 
 - Let's configure Mac's Command Line Tools and configure Homebrew.
 
@@ -83,7 +82,7 @@ make update-homebrew
 
 ## Setup - WSL / Ubuntu
 
-Just in case I don't work on MacOS, we can also replicate the above on Ubuntu/WSL.
+Just in case I don't work on MacOS, we can also replicate the above on Ubuntu/WSL:
 
 - Configure Homebrew and Git as above.
 
@@ -114,7 +113,7 @@ make update-linux
 
 ## Setup - Raspberry Pi
 
-To configure my own Raspberry Pi, we don't really need Homebrew.
+To configure my own Raspberry Pi, we don't really need Homebrew:
 
 - Prepare Ansible and Git.
 
@@ -136,7 +135,7 @@ make setup
 
 ## Update
 
-Updating the packages can be done by typing the following commands.
+Updating the packages can be done by typing the following commands:
 
 ```bash
 # for homebrew
