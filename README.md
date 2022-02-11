@@ -8,8 +8,8 @@ The provisioning process is automated using [Ansible](https://www.ansible.com/),
 
 Some notes to keep in mind before provisioning your device:
 
-- Make sure you get a PC with Intel processors. Homebrew (for Linux) does not support ARM processors (unless when provisioning a Raspberry Pi).
-- You have to use either Darwin-based Linux, Ubuntu-based Linux, or a Debian-based Raspberry Pi.
+- Make sure you get a PC with Intel processors. Homebrew (for Linux) does not support ARM processors.
+- You have to use either Darwin/Debian-based Linux.
 - I am a 'minimalist' developer. I don't really have any personal configurations other than the synchronized one in Visual Studio Code and my simple dotfiles.
 - We keep everything simple in local machine, and we can use Docker if we need more complicated tools (databases, caches, etcetera).
 
@@ -34,7 +34,7 @@ For Ubuntu/Linux:
 
 Remember that you can always not install all applications - you can comment out applications that you do not want to install before running `make setup`.
 
-## Setup - Windows
+## Setup: Windows
 
 My personal preference is that I will try to avoid programming in Windows for separation of concerns between my personal life and my development life. Windows machines are simple and I don't think the process could get any more straightforward than it is already. I usually provision my Windows devices like the following steps:
 
@@ -42,14 +42,23 @@ My personal preference is that I will try to avoid programming in Windows for se
 - Install [Google Drive](https://www.google.com/drive/download/) and setup it to guard important folders.
 - Install other essential applications, refer to Google Drive for list of essential applications for Windows.
 
-## Setup - MacOS
+## Setup: MacOS / Debian
 
-For my software engineering device (should be MacOS), please follow below steps to get your device provisioned:
+For my software engineering device (should be UNIX-based systems), please follow below steps to get your device provisioned!
 
-- Let's configure Mac's Command Line Tools and configure Homebrew.
+- Initially, we have to start by installing Git on Debian or Xcode on MacOS:
 
 ```bash
+# Debian
+sudo apt install git
+
+# MacOS
 xcode-select --install
+```
+
+- Configure Homebrew:
+
+```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install ansible
 brew install git
@@ -60,7 +69,7 @@ brew install git
 - Setup global configurations for Git. After that is done, generate [SSH key for GitHub](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). Then, [add it to your GitHub account](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). Finally, don't forget to test your connection and remember to [verify the RSA fingerprint](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/testing-your-ssh-connection).
 
 ```bash
-git config --global user.email <MY_EMAIL>
+git config --global user.email <MY_GITHUB_EMAIL>
 git config --global user.name <MY_GITHUB_USERNAME>
 ssh -T git@github.com
 ```
@@ -78,59 +87,7 @@ make setup
 ```bash
 brew remove ansible
 make update-homebrew
-```
-
-## Setup - WSL / Ubuntu
-
-Just in case I don't work on MacOS, we can also replicate the above on Ubuntu/WSL:
-
-- Configure Homebrew and Git as above.
-
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install ansible
-brew install git
-git config --global user.email <MY_EMAIL>
-git config --global user.name <MY_GITHUB_USERNAME>
-ssh -T git@github.com
-```
-
-- Clone repository and run Ansible.
-
-```bash
-git clone git@github.com:lauslim12/provisions.git
-cd provisions
-make setup
-```
-
-- Clean up Ansible and update your Linux and packages.
-
-```bash
-brew remove ansible
-make update-homebrew
-make update-linux
-```
-
-## Setup - Raspberry Pi
-
-To configure my own Raspberry Pi, we don't really need Homebrew:
-
-- Prepare Ansible and Git.
-
-```bash
-sudo apt install ansible
-sudo apt install git
-git config --global user.email <MY_EMAIL>
-git config --global user.name <MY_GITHUB_USERNAME>
-ssh -T git@github.com
-```
-
-- Clone repository and run Ansible.
-
-```bash
-git clone git@github.com:lauslim12/provisions.git
-cd provisions
-make setup
+make update-linux # if running on Debian-based Linux
 ```
 
 ## Update
@@ -193,4 +150,4 @@ Configure Visual Studio Code:
 - Fetch all currently being worked on projects from GitHub. Just a simple `git clone` will suffice.
 - Once a week, please update all dependencies by using the available commands.
 - Don't forget to check for updates for your system at all times.
-- Check the repository every so often to update the commands and links (should be highly unlikely).
+- Check the repository once in a while to update the commands and links (should be highly unlikely).
