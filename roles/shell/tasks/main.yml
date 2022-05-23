@@ -8,3 +8,7 @@
 - name: Injects alias into '.bash_aliases' (if applicable)
   command: cp ./dotfiles/.aliases ~/.bash_aliases
   when: ansible_facts["distribution"] == "Ubuntu"
+
+# Prints out message.
+- name: Finish setting up
+  command: echo "Device has been successfully set up. Please reload the shell 👍"
