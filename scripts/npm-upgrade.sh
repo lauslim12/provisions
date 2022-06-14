@@ -7,9 +7,8 @@ set -x
 
 # Main function to upgrade all NPM dependencies.
 main() {
-  for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
-  do
-    npm install -g "$package"
+  for package in $(npm --location=global outdated --parseable --depth=0 | cut -d: -f2); do
+    npm install --location=global "$package"
   done
 }
 
