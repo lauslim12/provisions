@@ -25,3 +25,8 @@ fi
 if [ -f ~/Projects/provisions/dotfiles/functions.sh ]; then
   source ~/Projects/provisions/dotfiles/functions.sh
 fi
+
+# Load environment.
+if [ -f ~/Projects/provisions/dotfiles/exports.sh ]; then
+  source ~/Projects/provisions/dotfiles/exports.sh
+fi
