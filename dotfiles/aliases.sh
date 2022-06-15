@@ -18,7 +18,6 @@ fi
 
 # Alias for existing commands, make them more verbose, or make them shorter.
 alias c="clear"
-alias d="du -sh"
 alias cp="cp -v"
 alias cpl="rsync -av --stats --progress"
 alias mkdir="mkdir -p"

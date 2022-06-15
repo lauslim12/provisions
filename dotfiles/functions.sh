@@ -8,6 +8,33 @@
 # As per usual I try to make everything compatible with each other.
 ##
 
+# Initial setup of the dotfile, run essential functions before defining other, more generic functions.
+# Normalize `open` across Linux, macOS, and Windows. This is needed to make the `o` function (see below) cross-platform.
+if [ ! $(uname -s) = 'Darwin' ]; then
+	if grep -q Microsoft /proc/version; then
+		# Ubuntu on Windows using the Linux subsystem.
+		alias open='explorer.exe';
+	else
+    # Normal open in Linux systems.
+		alias open='xdg-open';
+	fi
+fi
+
+# Determines the size of a file or a total size of a directory.
+fs() {
+  if du -b /dev/null > /dev/null 2>&1; then
+		local arg=-sbh;
+	else
+		local arg=-sh;
+	fi
+	
+  if [[ -n "$@" ]]; then
+		du $arg -- "$@";
+	else
+		du $arg .[^.]* ./*;
+	fi;
+}
+
 # Provides information about branches and remotes the Git repository.
 gremotes() {
   is_in_git_repo || return
@@ -37,6 +64,16 @@ mkcd() {
   else
     mkdir -p "$1" && cd "$1" || return
   fi
+}
+
+# `o` with no arguments opens the current directory, otherwise opens the given
+# location
+o() {
+	if [ $# -eq 0 ]; then
+		open .;
+	else
+		open "$@";
+	fi;
 }
 
 # Creates a Python Virtual Environment (Python 3) properly.
