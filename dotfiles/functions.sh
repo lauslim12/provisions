@@ -13,10 +13,10 @@
 if [ ! $(uname -s) = 'Darwin' ]; then
 	if grep -q Microsoft /proc/version; then
 		# Ubuntu on Windows using the Linux subsystem.
-		alias open='explorer.exe';
+		alias open='explorer.exe'
 	else
     # Normal open in Linux systems.
-		alias open='xdg-open';
+		alias open='xdg-open'
 	fi
 fi
 
@@ -29,15 +29,16 @@ fs() {
 	fi
 	
   if [[ -n "$@" ]]; then
-		du $arg -- "$@";
+		du $arg -- "$@"
 	else
-		du $arg .[^.]* ./*;
+		du $arg .[^.]* ./*
 	fi;
 }
 
 # Provides information about branches and remotes the Git repository.
 gremotes() {
   is_in_git_repo || return
+
   echo '➤ git local branches'
   git branch
   echo ''
@@ -54,6 +55,17 @@ is_in_git_repo() {
   git rev-parse HEAD >/dev/null 2>&1
 }
 
+# Loads environment file from a filename passed as an argument.
+loadenv() {
+  while read line; do
+    if [ "${line:0:1}" = '#' ]; then
+      continue
+    fi
+
+    export $line > /dev/null
+  done < "$1"
+}
+
 # Make directory and enter it.
 mkcd() {
   if [ -z "$1" ]; then
@@ -66,14 +78,19 @@ mkcd() {
   fi
 }
 
-# `o` with no arguments opens the current directory, otherwise opens the given
-# location
+# `o` with no arguments opens the current directory, otherwise opens
+# the given location.
 o() {
 	if [ $# -eq 0 ]; then
-		open .;
+		open .
 	else
-		open "$@";
-	fi;
+		open "$@"
+	fi
+}
+
+# Cleans 'py[cod]' and '__pychache__' directories/files in the current tree.
+pythonclean() {
+  find . | grep -E "(__pycache__|\.py[cod]$)" | xargs rm -rf
 }
 
 # Creates a Python Virtual Environment (Python 3) properly.
