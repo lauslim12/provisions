@@ -4,6 +4,14 @@ This repository is a personal note to me if I ever get a new device in order to 
 
 The provisioning process is automated using [Ansible](https://www.ansible.com/), an Infrastructure-as-Code.
 
+## Structure
+
+The project is structured like the following:
+
+- `dotfiles` contains my personal dotfiles configuration for Terminal. It also contains my Visual Studio Code settings.
+- `scripts` contains useful scripts for performing utility matters, such as updating Homebrew cleanly.
+- `setup` contains Ansible files in order to provision / setup a device for the first time.
+
 ## Notes
 
 Some notes to keep in mind before provisioning your device:
@@ -74,6 +82,14 @@ git config --global user.name <MY_GITHUB_USERNAME>
 ssh -T git@github.com
 ```
 
+- Create a folder named `Projects`, capital P. This is important, as mainly the `provisions` repo will be placed inside here. If you take a look at `dotfiles/.main`, the path is hardcoded to this location. Don't forget to symlink the `Projects` folder to your Desktop (if necessary).
+
+```bash
+mkdir -p ~/Projects
+ln -s ~/Projects ~/Desktop/Projects
+cd Projects
+```
+
 - Clone repository and run Ansible.
 
 ```bash
@@ -113,11 +129,8 @@ After you have configured everything in your system, it's time to do some manual
 
 Configure MacOS:
 
-- System Preferences -> Trackpad -> Tap to Click.
-- System Preferences -> Dock -> Automatically Hide and Show Dock.
-- Battery -> Show Percentage.
+- Run `bash dotfiles/macos.sh` to set up sensible, customized defaults.
 - Finder -> Preferences -> Show Home Folder in Sidebar & Show Mac.
-- Create projects folder: `mkdir Projects` and `ln -s ~/Projects ~/Desktop/Projects`.
 - Allow 'night mode' to change the color of the screen to a warmer one during sunset to sunrise.
 - Tidy up dock and desktop icons.
 
@@ -129,7 +142,6 @@ Configure Windows:
 
 Configure Ubuntu / WSL:
 
-- Create projects folder: `mkdir Projects` and `ln -s ~/Projects ~/Desktop/Projects` if required.
 - If using WSL, install Windows Terminal for better terminal experience.
 
 Configure Google Chrome:
