@@ -59,7 +59,6 @@ alias dsfiles="find . -name '.DS_Store' -type f -delete"
 
 # Alias for my own personal stuff, such as files/folders and configurations.
 alias reload="exec ${SHELL} -l"
-alias projects="cd ~/Projects"
 
 # Alias for Git.
 alias ga="git add"

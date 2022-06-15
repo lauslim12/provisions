@@ -78,6 +78,12 @@ mkcd() {
   fi
 }
 
+# Cleans `node_modules` folder recursively from the current working directory. This function
+# also prints out the folders being deleted.
+nodeclean() {
+  find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;
+}
+
 # `o` with no arguments opens the current directory, otherwise opens
 # the given location.
 o() {
@@ -86,6 +92,22 @@ o() {
 	else
 		open "$@"
 	fi
+}
+
+# Switches to `Projects` folder with autocomplete for the subdirectories for quick
+# access to a project. If the folder does not exist, create the folder. The autocomplete
+# is a bit bugged, the autocomplete only shows the folders that the current working directory has,
+# so not in the `Projects` folder itself.
+projects() {
+  if [ ! -d ~/Projects ]; then
+    mkdir -p ~/Projects
+  fi
+
+  if [ $1 ]; then
+    cd ~/Projects/$1
+  else
+    cd ~/Projects
+  fi
 }
 
 # Cleans 'py[cod]' and '__pychache__' directories/files in the current tree.
