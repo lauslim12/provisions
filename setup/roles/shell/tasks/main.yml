@@ -1,12 +1,12 @@
 ---
 # Injects my aliases into '.zshrc'.
 - name: Injects alias into '.zshrc' (if applicable)
-  command: cp ./dotfiles/.main ~/.zshrc
+  command: cp ../dotfiles/.main ~/.zshrc
   when: ansible_facts["os_family"] == "Darwin"
 
 # Injects my aliases into '.bash_aliases'.
 - name: Injects alias into '.bash_aliases' (if applicable)
-  command: cp ./dotfiles/.main ~/.bash_aliases
+  command: cp ../dotfiles/.main ~/.bash_aliases
   when: ansible_facts["distribution"] == "Ubuntu"
 
 # Prints out message.
