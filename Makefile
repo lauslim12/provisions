@@ -1,23 +1,15 @@
 .PHONY: setup
 setup:
-	ansible-playbook --diff --verbose ansible.yml -i hostfile --ask-become-pass
+	cd setup && ansible-playbook --diff --verbose ansible.yml -i hostfile --ask-become-pass
 
 .PHONY: update-homebrew
 update-homebrew:
-	brew update
-	brew upgrade
-	brew cleanup
-	brew autoremove
-	brew doctor
+	sh ./scripts/update-homebrew.sh
 
 .PHONY: update-linux
 update-linux:
-	sudo apt update
-	sudo apt upgrade
-	sudo apt autoremove
-	sudo apt autoclean
-	sudo apt clean
+	sh ./scripts/update-linux.sh
 
 .PHONY: update-npm
 update-npm:
-	sh ./scripts/npm-upgrade.sh
+	sh ./scripts/update-npm.sh
