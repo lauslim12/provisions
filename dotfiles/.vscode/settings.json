@@ -1,14 +1,8 @@
 {
-  /**
-   * Workbenches to edit the 'screen' of VSCode.
-   */
   "workbench.colorTheme": "Default Light+",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
 
-  /**
-   * My customized editor settings.
-   */
   "editor.bracketPairColorization.enabled": true,
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
@@ -18,9 +12,6 @@
     "source.fixAll": true
   },
 
-  /**
-   * JavaScript and Node families.
-   */
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
@@ -41,17 +32,11 @@
     "editor.defaultFormatter": "Prisma.prisma"
   },
 
-  /**
-   * Golang family.
-   */
   "[go]": {
     "editor.defaultFormatter": "golang.go",
     "editor.tabSize": 4
   },
 
-  /**
-   * Python family.
-   */
   "python.formatting.provider": "black",
   "[python]": {
     "editor.defaultFormatter": "ms-python.python",
