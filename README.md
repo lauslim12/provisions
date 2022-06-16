@@ -1,6 +1,6 @@
 # Provisions
 
-This repository is a personal note to me if I ever get a new device in order to make the shifting process as swift as possible. In order to separate the concerns between personal use and development, please do not use the same device for work and personal matters (my personal preference is Windows machines for personal use and Unix systems for software engineering).
+This repository is my digital toolbox, a personal note to me if I ever get a new device in order to make the shifting process as swift as possible. In order to separate the concerns between personal use and development, please do not use the same device for work and personal matters (my personal preference is Windows machines for personal use and Unix systems for software engineering).
 
 The provisioning process is automated using [Ansible](https://www.ansible.com/), an Infrastructure-as-Code.
 
@@ -20,6 +20,7 @@ Some notes to keep in mind before provisioning your device:
 - You have to use either Darwin/Debian-based Linux.
 - I am a 'minimalist' developer. I don't really have any personal configurations other than the synchronized one in Visual Studio Code and my simple dotfiles.
 - We keep everything simple in local machine, and we can use Docker if we need more complicated tools (databases, caches, etcetera).
+- If you need to add an environment variable, instead of appending them to the `.bash_profile` or `.zshrc`, please append it to `exports.sh` instead.
 
 ## Preparations
 
@@ -129,7 +130,7 @@ After you have configured everything in your system, it's time to do some manual
 
 Configure MacOS:
 
-- Run `bash dotfiles/macos.sh` to set up sensible, customized defaults.
+- Run `sh dotfiles/macos.sh` to set up sensible, customized defaults.
 - Finder -> Preferences -> Show Home Folder in Sidebar & Show Mac.
 - Allow 'night mode' to change the color of the screen to a warmer one during sunset to sunrise.
 - Tidy up dock and desktop icons.
@@ -139,22 +140,19 @@ Configure Windows:
 - Settings -> Taskbar -> Automatically Hide Taskbar in Desktop
 - Allow 'night mode' to change the color of the screen to a warmer one during sunset to sunrise.
 - Tidy up taskbar and desktop icons.
-
-Configure Ubuntu / WSL:
-
 - If using WSL, install Windows Terminal for better terminal experience.
 
 Configure Google Chrome:
 
-- Log in to all of Google Accounts.
+- Log in to all of Google Accounts and all webservices that I use.
 - Setup Google Synchronization (Contacts, Drive, Calendar, and more).
 - Change Privacy and Security to Public DNS.
-- Log in to all webservices that I use (StackOverflow, LinkedIn, GitHub, etcetera).
 
 Configure Visual Studio Code:
 
 - Log in to Microsoft Account inside Visual Studio Code to sync all of my extensions and settings.
-- If somehow the settings are lost, you can use the exact same one in `dotfiles/.vscode/settings.json`. Take note of extensions though.
+- If somehow the settings are lost, you can use the exact same one in `dotfiles/.vscode/settings.json` and `dotfiles/.vscode/extensions.sh`.
+- Configure that by copying `settings.json`, and executing `sh dotfiles/.vscode/extensions.sh`.
 
 ## Next Steps
 
