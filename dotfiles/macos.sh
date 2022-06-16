@@ -24,6 +24,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Greet Mac user.
 echo "Hello $(whoami)! Let's start configuring the defaults!"
 
+# Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window.
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
