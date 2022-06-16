@@ -1,0 +1,3 @@
+# VSCode's `settings.json` is JSON With Comments, not pure JSON. This is 
+# written so GitHub does not render them with the bad red background.
+./dotfiles/.vscode/settings.json linguist-language=JSON-with-Comments
