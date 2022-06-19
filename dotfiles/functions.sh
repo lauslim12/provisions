@@ -94,6 +94,11 @@ o() {
   fi
 }
 
+# Prints all of the environment variables in the current Shell.
+path() {
+  echo "${PATH//:/$'\n'}"
+}
+
 # Switches to `Projects` folder with autocomplete for the subdirectories for quick
 # access to a project. If the folder does not exist, create the folder. The autocomplete
 # is a bit bugged, the autocomplete only shows the folders that the current working directory has,
