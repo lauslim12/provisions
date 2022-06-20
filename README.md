@@ -1,6 +1,6 @@
 # Provisions
 
-This repository is my digital toolbox, a personal note to me if I ever get a new device in order to make the shifting process as swift as possible. In order to separate the concerns between personal use and development, please do not use the same device for work and personal matters (my personal preference is Windows machines for personal use and Unix systems for software engineering).
+This repository is my digital toolbox, a personal note to me if I ever get a new device in order to make the shifting process as swift as possible. In order to separate the concerns between personal use and development, please do not use the same device for work and personal matters (my personal preference is Windows machines for personal use and Unix systems for software engineering). I will try to avoid programming in Windows for separation of concerns between my personal life and my development life. Windows machines are simple and I don't think the process could get any more straightforward than it is already.
 
 The provisioning process is automated using [Ansible](https://www.ansible.com/), an Infrastructure-as-Code.
 
@@ -30,6 +30,7 @@ For Windows:
 
 - Take care of Windows Updates and Drivers first to prevent any unwanted happenings.
 - Log in to Microsoft Account, link it to the device, setup synchronizations (settings, accounts).
+- Install Chrome, Drive, and other essential applications. This should not be the main development machine if possible.
 
 For MacOS:
 
@@ -43,17 +44,7 @@ For Ubuntu/Linux:
 
 Remember that you can always not install all applications - you can comment out applications that you do not want to install before running `make setup`.
 
-## Setup: Windows
-
-My personal preference is that I will try to avoid programming in Windows for separation of concerns between my personal life and my development life. Windows machines are simple and I don't think the process could get any more straightforward than it is already. I usually provision my Windows devices like the following steps:
-
-- Install [Google Chrome](https://www.google.com/chrome/).
-- Install [Google Drive](https://www.google.com/drive/download/) and setup it to guard important folders.
-- Install other essential applications, refer to Google Drive for list of essential applications for Windows.
-
-## Setup: MacOS / Debian
-
-For my software engineering device (should be UNIX-based systems), please follow below steps to get your device provisioned!
+## Setup
 
 - Initially, we have to start by installing Git on Debian or Xcode on MacOS:
 
@@ -104,7 +95,7 @@ make setup
 ```bash
 brew remove ansible
 make update-homebrew
-make update-linux # if running on Debian-based Linux
+make update-linux # if running a Debian-based Linux
 ```
 
 ## Update
@@ -121,8 +112,6 @@ make update-linux
 # for npm
 make update-npm
 ```
-
-You can use all commands in order to update all package managers!
 
 ## Manual Configurations
 
@@ -153,6 +142,10 @@ Configure Visual Studio Code:
 - Log in to Microsoft Account inside Visual Studio Code to sync all of my extensions and settings.
 - If somehow the settings are lost, you can use the exact same one in `dotfiles/.vscode/settings.json` and `dotfiles/.vscode/extensions.sh`.
 - Configure that by copying `settings.json`, and executing `sh dotfiles/.vscode/extensions.sh`.
+
+Configure Terminal:
+
+- If you just want to install the Terminal configurations, you can just use `sh scripts/install-terminal.sh` to install the dotfiles.
 
 ## Next Steps
 
