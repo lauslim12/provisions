@@ -9,11 +9,11 @@
 
 # Main function.
 main() {
-	sudo apt update
-	sudo apt upgrade
-	sudo apt autoremove
-	sudo apt autoclean
-	sudo apt clean
+	brew update
+	brew upgrade
+	brew cleanup
+	brew autoremove
+	brew doctor
 }
 
 # Run main function.
