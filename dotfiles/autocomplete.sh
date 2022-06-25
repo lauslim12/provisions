@@ -7,6 +7,15 @@
 # in order to be able to access a subdirectory briskly.
 ##
 
+##
+# Initial setup, run needed functions before performing autocomplete operations.
+##
+# For Mac, set up 'compinit'.
+if [ $(uname -s) = 'Darwin' ]; then
+  autoload bashcompinit && bashcompinit
+  autoload -Uz compinit && compinit
+fi
+
 # Set up autocompletes for my 'Projects' folder.
 _projects_autocomplete() {
   local cmd=$1 cur=$2 pre=$3
