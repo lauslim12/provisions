@@ -6,6 +6,9 @@
 # Special dotfile used to serve as all of my Shell's functions. This is used
 # to perform sophisticated commands that are unable to be performed with `alias` alone.
 # As per usual I try to make everything compatible with each other.
+#
+# The difference between 'aliases' and 'functions' is 'aliases' only contains a single command, while
+# 'functions' can contain multiple commands and processes before achieving the intended result(s).
 ##
 
 # Initial setup of the dotfile, run essential functions before defining other, more generic functions.
@@ -78,12 +81,6 @@ mkcd() {
   fi
 }
 
-# Cleans `node_modules` folder recursively from the current working directory. This function
-# also prints out the folders being deleted.
-nodeclean() {
-  find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;
-}
-
 # `o` with no arguments opens the current directory, otherwise opens
 # the given location.
 o() {
@@ -112,11 +109,6 @@ projects() {
   else
     cd ~/Projects
   fi
-}
-
-# Cleans 'py[cod]' and '__pychache__' directories/files in the current tree.
-pythonclean() {
-  find . | grep -E "(__pycache__|\.py[cod]$)" | xargs rm -rf
 }
 
 # Creates a Python Virtual Environment (Python 3) properly.
