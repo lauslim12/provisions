@@ -30,7 +30,7 @@ For Windows:
 
 - Take care of Windows Updates and Drivers first to prevent any unwanted happenings.
 - Log in to Microsoft Account, link it to the device, setup synchronizations (settings, accounts).
-- Install Chrome, Drive, and other essential applications. This should not be the main development machine if possible.
+- Install Chrome, Drive, and essential applications. This should not be the main development machine if possible.
 
 For MacOS:
 
@@ -113,9 +113,11 @@ make update-linux
 make update-npm
 ```
 
+Updates have to be done inside the `provisions` folder.
+
 ## Manual Configurations
 
-After you have configured everything in your system, it's time to do some manual works.
+After you have configured everything in your system, it's time to do some manual works. Make sure you are in `~/Projects/provisions` folder in case you want to run `sh` or `make` commands.
 
 Configure MacOS:
 
