@@ -9,6 +9,10 @@
   command: cp ../dotfiles/main.sh ~/.bash_aliases
   when: ansible_facts["distribution"] == "Ubuntu"
 
+# Install fzf autocompletions.
+- name: Install 'fzf' autocompletions
+  shell: $(brew --prefix)/opt/fzf/install
+
 # Prints out message.
 - name: Finish setting up
   command: echo "Device has been successfully set up. Please reload the shell 👍"
