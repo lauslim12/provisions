@@ -22,17 +22,26 @@
 # - Restart your shell.
 ##
 
+# Define global variables and essential constants for our Shell.
+PROJECTS_DIRECTORY=~/Projects
+PROVISIONS_DIRECTORY=~/Projects/provisions
+
 # Load aliases.
-if [ -f ~/Projects/provisions/dotfiles/aliases.sh ]; then
-  source ~/Projects/provisions/dotfiles/aliases.sh
+if [ -f "$PROVISIONS_DIRECTORY/dotfiles/aliases.sh" ]; then
+  source "$PROVISIONS_DIRECTORY/dotfiles/aliases.sh"
+fi
+
+# Load autocompletes.
+if [ -f "$PROVISIONS_DIRECTORY/dotfiles/autocomplete.sh" ]; then
+  source "$PROVISIONS_DIRECTORY/dotfiles/autocomplete.sh"
 fi
 
 # Load functions.
-if [ -f ~/Projects/provisions/dotfiles/functions.sh ]; then
-  source ~/Projects/provisions/dotfiles/functions.sh
+if [ -f "$PROVISIONS_DIRECTORY/dotfiles/functions.sh" ]; then
+  source "$PROVISIONS_DIRECTORY/dotfiles/functions.sh"
 fi
 
 # Load environment.
-if [ -f ~/Projects/provisions/dotfiles/exports.sh ]; then
-  source ~/Projects/provisions/dotfiles/exports.sh
+if [ -f "$PROVISIONS_DIRECTORY/dotfiles/exports.sh" ]; then
+  source "$PROVISIONS_DIRECTORY/dotfiles/exports.sh"
 fi

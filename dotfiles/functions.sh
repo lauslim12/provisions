@@ -101,8 +101,7 @@ path() {
 
 # Switches to `Projects` folder with autocomplete for the subdirectories for quick
 # access to a project. If the folder does not exist, create the folder. The autocomplete
-# is a bit bugged, the autocomplete only shows the folders that the current working directory has,
-# so not in the `Projects` folder itself.
+# supports nested dictionaries.
 projects() {
   if [ ! -d ~/Projects ]; then
     mkdir -p ~/Projects
