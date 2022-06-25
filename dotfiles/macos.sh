@@ -77,9 +77,20 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Set list view as the default view mode. Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`.
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
-# Avoid creating .DS_Store files on network or USB volumes.
+# Avoid creating '.DS_Store' files on network or USB volumes.
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+###############################################################################
+# iTerm2                                                                      #
+###############################################################################
+
+# Enable Secure Keyboard Entry in Terminal.app.
+# See: https://security.stackexchange.com/a/47786/8918
+defaults write com.apple.terminal SecureKeyboardEntry -bool true
+
+# Don't display the prompt when quitting iTerm.
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 ###############################################################################
 # Finishing                                                                   #
