@@ -7,9 +7,10 @@
 # in order to be able to access a subdirectory briskly.
 ##
 
-##
-# Initial setup, run needed functions before performing autocomplete operations.
-##
+###############################################################################
+# All in one, do all functions in order to activate autocomplete in Shell.    #
+###############################################################################
+
 # For Mac, set up 'compinit'.
 if [ $(uname -s) = 'Darwin' ]; then
   autoload bashcompinit && bashcompinit
@@ -38,6 +39,10 @@ _projects_autocomplete() {
   done
 }
 
-# this line registers our custom autocompletion function to be invoked 
-# when completing arguments to the repo command
+# This line registers our custom autocompletion function to be invoked 
+# when completing arguments to the 'projects' alias.
 complete -F _projects_autocomplete -o nospace projects
+
+# Activate `fzf` autocompletions depending on the current Shell.
+[ ! -z "$BASH" ] && [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ ! -z "$ZSH_NAME" ] && [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
