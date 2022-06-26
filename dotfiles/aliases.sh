@@ -17,6 +17,7 @@ if ls --color > /dev/null 2>&1; then
 	COLORFLAG="--color"
 else
 	COLORFLAG="-G"
+	export LSCOLORS='Cxfxcxdxbxegedabagacad'
 fi
 
 ###############################################################################
