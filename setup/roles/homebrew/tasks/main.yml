@@ -32,6 +32,7 @@
     applications:
       - docker
       - google-drive
+      - iterm2
       - slack
       - visual-studio-code
       - zoom
