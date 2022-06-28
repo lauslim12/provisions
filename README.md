@@ -8,7 +8,7 @@ The provisioning process is automated using [Ansible](https://www.ansible.com/),
 
 The project is structured like the following:
 
-- `dotfiles` contains my personal dotfiles configuration for Terminal. It also contains my Visual Studio Code settings.
+- `dotfiles` contains my personal dotfiles for Terminal. It also contains my Visual Studio Code settings.
 - `scripts` contains useful scripts for performing utility matters, such as updating Homebrew cleanly.
 - `setup` contains Ansible files in order to provision / setup a device for the first time.
 
@@ -74,7 +74,7 @@ git config --global user.name <MY_GITHUB_USERNAME>
 ssh -T git@github.com
 ```
 
-- Create a folder named `Projects`, capital P. This is important, as mainly the `provisions` repo will be placed inside here. If you take a look at `dotfiles/.main`, the path is hardcoded to this location. Don't forget to symlink the `Projects` folder to your Desktop (if necessary).
+- Create a folder named `Projects`. This is important, as mainly the `provisions` repo will be placed inside here. If you take a look at `dotfiles/.main`, the path is hardcoded to this location. Don't forget to symlink the `Projects` folder to your Desktop (if necessary).
 
 ```bash
 mkdir -p ~/Projects
@@ -100,7 +100,7 @@ make update-linux # if running a Debian-based Linux
 
 ## Update
 
-Updating the packages can be done by typing the following commands:
+Updating the packages can be done by typing these commands (inside `provisions` of course):
 
 ```bash
 # for homebrew
@@ -113,15 +113,12 @@ make update-linux
 make update-npm
 ```
 
-Updates have to be done inside the `provisions` folder.
-
 ## Manual Configurations
 
 After you have configured everything in your system, it's time to do some manual works. Make sure you are in `~/Projects/provisions` folder in case you want to run `sh` or `make` commands.
 
 Configure MacOS:
 
-- Run `sh dotfiles/macos.sh` to set up sensible, customized defaults.
 - Finder -> Preferences -> Show Home Folder in Sidebar & Show Mac.
 - Allow 'night mode' to change the color of the screen to a warmer one during sunset to sunrise.
 - Tidy up dock and desktop icons.

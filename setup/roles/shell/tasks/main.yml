@@ -13,6 +13,11 @@
 - name: Install 'fzf' autocompletions
   shell: $(brew --prefix)/opt/fzf/install
 
+# For MacOS, configure Mac's default settings.
+- name: Configure MacOS default settings (if applicable)
+  command: sh ../dotfiles/macos.sh
+  when: ansible_facts["os_family"] == "Darwin"
+
 # Prints out message.
 - name: Finish setting up
   command: echo "Device has been successfully set up. Please reload the shell 👍"
