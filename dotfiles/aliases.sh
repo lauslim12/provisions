@@ -132,4 +132,4 @@ alias nodeclean='find . -name "node_modules" -type d -prune -exec rm -rf -v '{}'
 ###############################################################################
 
 # Cleans '.DS_Store' in the current tree.
-alias dsfiles="find . -name '.DS_Store' -type f -name -delete"
+alias dsfiles='find . -name ".DS_Store" -type f -print -delete'
