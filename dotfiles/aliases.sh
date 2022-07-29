@@ -20,6 +20,11 @@ else
 	export LSCOLORS='Cxfxcxdxbxegedabagacad'
 fi
 
+# Ensure MacOS devices can get special aliases.
+if [[ "$OSTYPE" == darwin* ]]; then
+	alias lock="pmset displaysleepnow"
+fi
+
 ###############################################################################
 # Alias for existing commands, make more verbose, shorter, or change them.    #
 ###############################################################################
