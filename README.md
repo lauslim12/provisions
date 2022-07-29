@@ -98,30 +98,27 @@ make update-homebrew
 make update-linux # if running a Debian-based Linux
 ```
 
-## Update
+## Scripts
 
-Updating the packages can be done by typing these commands (inside `provisions` of course):
+With the help of `Makefile`, several commands have been made to act as shortcuts to ease up the provisioning and update process. Make sure you are in the `provisions` folder before using these commands.
 
-```bash
-# for homebrew
-make update-homebrew
-
-# for apt/linux
-make update-linux
-
-# for npm
-make update-npm
-```
+- `make setup`, to setup/provision your whole device.
+- `make install-terminal`, to install all my Terminal & MacOS configurations.
+- `make update-homebrew`, to update Homebrew packages.
+- `make update-linux`, to update Linux (Debian-based) with the `apt` package manager.
+- `make update-npm`, to update `npm` itself and global `npm` packages.
 
 ## Manual Configurations
 
-After you have configured everything in your system, it's time to do some manual works. Make sure you are in `~/Projects/provisions` folder in case you want to run `sh` or `make` commands.
+After you have configured everything in your system, it's time to do some manual works.
 
 Configure MacOS:
 
 - Finder -> Preferences -> Show Home Folder in Sidebar & Show Mac.
 - Allow 'night mode' to change the color of the screen to a warmer one during sunset to sunrise.
 - Tidy up dock and desktop icons.
+- System Preferences -> Keyboard -> Input Sources -> Add Japanese - Romaji. Ensure `Katakana` is checked.
+- System Preferences -> Shortcuts -> Input Sources -> Select both of change input sources shortcuts.
 
 Configure Windows:
 
@@ -141,10 +138,6 @@ Configure Visual Studio Code:
 - Log in to Microsoft Account inside Visual Studio Code to sync all of my extensions and settings.
 - If somehow the settings are lost, you can use the exact same one in `dotfiles/.vscode/settings.json` and `dotfiles/.vscode/extensions.sh`.
 - Configure that by copying `settings.json`, and executing `sh dotfiles/.vscode/extensions.sh`.
-
-Configure Terminal:
-
-- If you just want to install the Terminal configurations, you can just use `sh scripts/install-terminal.sh` to install the dotfiles.
 
 ## Next Steps
 
