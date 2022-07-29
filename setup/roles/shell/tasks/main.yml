@@ -15,7 +15,7 @@
 
 # For MacOS, configure Mac's default settings.
 - name: Configure MacOS default settings (if applicable)
-  command: sh ../dotfiles/macos.sh
+  command: sh ../scripts/setup-macos.sh
   when: ansible_facts["os_family"] == "Darwin"
 
 # Prints out message.

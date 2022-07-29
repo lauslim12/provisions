@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ##
-# macos.sh
+# setup-macos.sh
 #
-# Dotfile to set up my personal MacOS's configuration. This is opinionated, and of
+# Script to set up my personal MacOS's configuration. This is opinionated, and of
 # course there might be a thing or two which you could improve for yourself. As an
 # exception, this file is not alphabetically sorted.
 ##
@@ -31,8 +31,9 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 # Screen                                                                      #
 ###############################################################################
 
-# Automatically hide and show the Dock.
-defaults write com.apple.dock autohide -bool true
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to the desktop.
 defaults write com.apple.screencapture location -string "$HOME/Desktop"
@@ -59,8 +60,11 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Allow quitting via ⌘ + Q; doing so will also hide desktop icons.
 defaults write com.apple.finder QuitMenuItem -bool true
 
-# Show 'Macintosh HD' on Desktop.
-defaults write com.apple.finder ShowHardDrivesOnDesktop -boolean true
+# Show icons for hard drives, servers, and removable media on the desktop
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Show status bar.
 defaults write com.apple.finder ShowStatusBar -bool true
@@ -80,6 +84,22 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Avoid creating '.DS_Store' files on network or USB volumes.
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+###############################################################################
+# Dock                                                                        #
+###############################################################################
+
+# Automatically hide and show the Dock.
+defaults write com.apple.dock autohide -bool true
+
+# Enable highlight hover effect for the grid view of a stack (Dock).
+defaults write com.apple.dock mouse-over-hilite-stack -bool true
+
+# Set the icon size of Dock items to 48 pixels.
+defaults write com.apple.dock tilesize -int 48
+
+# Show indicator lights for open applications in the Dock.
+defaults write com.apple.dock show-process-indicators -bool true
 
 ###############################################################################
 # iTerm2                                                                      #

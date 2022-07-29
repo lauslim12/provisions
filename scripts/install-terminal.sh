@@ -30,7 +30,7 @@ main() {
 
   # If Mac, set sensible defaults from my dotfiles.
   if [ $(uname -s) = 'Darwin' ]; then
-    sh ./dotfiles/macos.sh
+    sh ./scripts/setup-macos.sh
   fi
 
   # Print out message.
