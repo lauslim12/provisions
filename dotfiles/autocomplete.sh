@@ -17,6 +17,19 @@ if [ $(uname -s) = 'Darwin' ]; then
   autoload -Uz compinit && compinit
 fi
 
+# Autocomplete for the RAM of currently running processes.
+_calcram() {
+  local sum
+  sum=0
+
+  for i in `ps aux | grep -i "$1" | grep -v "grep" | awk '{print $6}'`; do
+    sum=$(($i + $sum))
+  done
+
+  sum=$(echo "scale=2; $sum / 1024.0" | bc)
+  echo $sum
+}
+
 # Set up autocompletes for my 'Projects' folder.
 _projects_autocomplete() {
   local cmd=$1 cur=$2 pre=$3

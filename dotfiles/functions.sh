@@ -12,7 +12,7 @@
 ##
 
 ###############################################################################
-# All in one, do all functions in order to activate functions in Shell.       #
+# Preparations in our Shell to ensure all functions works properly.           #
 ###############################################################################
 
 # Normalize `open` across Linux, macOS, and Windows. This is needed to make the `o` function (see below) cross-platform.
@@ -25,6 +25,23 @@ if [ ! $(uname -s) = 'Darwin' ]; then
     alias open='xdg-open'
   fi
 fi
+
+# Special function for Mac: quitting an application.
+if [ $(uname -s) = 'Darwin' ]; then
+  quit() {
+    if [ -z "$1" ]; then
+      echo "Usage: quit appname"
+    else
+      for appname in $1; do
+        osascript -e 'quit app "'$appname'"'
+      done
+    fi
+  }
+fi
+
+###############################################################################
+# Shell functions.                                                            #
+###############################################################################
 
 # Change directory to selected directory with `fzf`.
 fd() {
@@ -83,7 +100,7 @@ loadenv() {
   done < "$1"
 }
 
-# Make directory and enter it.
+# Make a directory and enters it.
 mkcd() {
   if [ -z "$1" ]; then
     echo "Enter a directory name as the argument."
@@ -120,11 +137,50 @@ projects() {
   fi
 }
 
-# Creates a Python Virtual Environment (Python 3) properly.
+# Creates a Python Virtual Environment (Python 3) properly. If it already exists,
+# it will source the virtual environment.
 pythonvenv() {
   if ! [[ -d "./venv-${PWD##*/}" ]]; then
     python3 -m venv "./venv-${PWD##*/}"
   fi
 
   source ./venv-${PWD##*/}/bin/activate
+}
+
+# Show how much RAM an application uses. First argument is used
+# to get the process / application.
+ram() {
+  local sum
+  local app="$1"
+  if [ -z "$app" ]; then
+    echo "First argument - pattern to grep from processes"
+    return 0
+  fi
+
+  sum=$(_calcram $app)
+  if [[ $sum != "0" ]]; then
+    echo "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM!"
+  else
+    echo "No active processes matching pattern '${fg[blue]}${app}${reset_color}'."
+  fi
+}
+
+# Same as `ram`, but tracks RAM usage in realtime. Will run until you stop it.
+rams() {
+  local sum
+  local app="$1"
+  if [ -z "$app" ]; then
+    echo "First argument - pattern to grep from processes"
+    return 0
+  fi
+
+  while true; do
+    sum=$(_calcram $app)
+    if [[ $sum != "0" ]]; then
+      echo -en "${fg[blue]}${app}${reset_color} uses ${fg[green]}${sum}${reset_color} MBs of RAM\r"
+    else
+      echo -en "No active processes matching pattern '${fg[blue]}${app}${reset_color}'\r"
+    fi
+    sleep 1
+  done
 }
