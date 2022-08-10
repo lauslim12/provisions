@@ -11,11 +11,9 @@
 # All in one, do all functions in order to activate autocomplete in Shell.    #
 ###############################################################################
 
-# For Mac, set up 'compinit'.
-if [ $(uname -s) = 'Darwin' ]; then
-  autoload bashcompinit && bashcompinit
-  autoload -Uz compinit && compinit
-fi
+# Set up `compinit` for autocompletions.
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
 
 # Autocomplete for the RAM of currently running processes.
 _calcram() {

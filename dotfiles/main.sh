@@ -46,8 +46,8 @@ if [ -f "$PROVISIONS_DIRECTORY/dotfiles/exports.sh" ]; then
   source "$PROVISIONS_DIRECTORY/dotfiles/exports.sh"
 fi
 
-# Prepare configurations for `oh-my-zsh` (MacOS only).
-if [[ $OSTYPE == "darwin"* ]]; then
+# Prepare configurations for `oh-my-zsh`.
+if [ -d ~/.oh-my-zsh ]; then
   # We load our specific `oh-my-zsh` configurations before doing anything.
   ZSH_CUSTOM="$PROVISIONS_DIRECTORY/dotfiles/oh-my-zsh"
   ZSH_THEME="random"
