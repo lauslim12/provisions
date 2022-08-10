@@ -8,5 +8,4 @@
   vars:
     packages:
       - yarn
-      - pnpm
   loop: "{{ packages }}"

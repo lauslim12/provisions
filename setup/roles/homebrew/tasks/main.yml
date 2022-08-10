@@ -15,6 +15,7 @@
   vars:
     packages:
       - bat
+      - coreutils
       - fzf
       - gcc
       - git
