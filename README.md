@@ -8,7 +8,7 @@ The provisioning process is automated using [Ansible](https://www.ansible.com/),
 
 The project is structured like the following:
 
-- `dotfiles` contains my personal dotfiles for Terminal. It also contains my Visual Studio Code settings.
+- `dotfiles` contains my personal dotfiles for `iTerm2`, `oh-my-zsh`, and ordinary Terminal dotfiles.
 - `scripts` contains useful scripts for performing utility matters, such as updating Homebrew cleanly.
 - `setup` contains Ansible files in order to provision / setup a device for the first time.
 
@@ -20,7 +20,8 @@ Some notes to keep in mind before provisioning your device:
 - You have to use either Darwin/Debian-based Linux.
 - I am a 'minimalist' developer. I don't really have any personal configurations other than the synchronized one in Visual Studio Code and my simple dotfiles.
 - We keep everything simple in local machine, and we can use Docker if we need more complicated tools (databases, caches, etcetera).
-- If you need to add an environment variable, instead of appending them to the `.bash_profile` or `.zshrc`, please append it to `exports.sh` instead.
+- If you need to add an environment variable, instead of appending them to `.zshrc`, please append it to `exports.sh` instead (use `putenv`).
+- Several `zsh` themes are available through `oh-my-zsh`.
 
 ## Preparations
 
@@ -40,13 +41,14 @@ For MacOS:
 For Ubuntu/Linux:
 
 - Update software using `sudo apt update` and `sudo apt upgrade`.
+- Install `zsh` and set it to as the default Shell: `sudo apt install zsh` and `chsh -s $(which zsh)`.
 - You might have to `sudo apt install build-essential` for the `make` command.
 
 Remember that you can always not install all applications - you can comment out applications that you do not want to install before running `make setup`.
 
 ## Setup
 
-- Initially, we have to start by installing Git on Debian or Xcode on MacOS:
+- Initially, we have to start by installing `git` on Debian or `xcode-select` on MacOS:
 
 ```bash
 # Debian
@@ -74,7 +76,7 @@ git config --global user.name <MY_GITHUB_USERNAME>
 ssh -T git@github.com
 ```
 
-- Create a folder named `Projects`. This is important, as mainly the `provisions` repo will be placed inside here. If you take a look at `dotfiles/.main`, the path is hardcoded to this location. Don't forget to symlink the `Projects` folder to your Desktop (if necessary).
+- Create a folder named `Projects`. This is important, as mainly the `provisions` repo will be placed inside here. If you take a look at `dotfiles/main.sh`, the path is hardcoded to this location. Don't forget to symlink the `Projects` folder to your Desktop (if necessary).
 
 ```bash
 mkdir -p ~/Projects
@@ -103,7 +105,6 @@ make update-linux # if running a Debian-based Linux
 With the help of `Makefile`, several commands have been made to act as shortcuts to ease up the provisioning and update process. Make sure you are in the `provisions` folder before using these commands.
 
 - `make setup`, to setup/provision your whole device.
-- `make install-terminal`, to install all my Terminal & MacOS configurations.
 - `make update-homebrew`, to update Homebrew packages.
 - `make update-linux`, to update Linux (Debian-based) with the `apt` package manager.
 - `make update-npm`, to update `npm` itself and global `npm` packages.
@@ -115,17 +116,23 @@ After you have configured everything in your system, it's time to do some manual
 Configure MacOS:
 
 - Finder -> Preferences -> Show Home Folder in Sidebar & Show Mac.
-- Allow 'night mode' to change the color of the screen to a warmer one during sunset to sunrise.
+- System Preferences -> Keyboard -> Input Sources -> Add Japanese - Romaji.
+- System Preferences -> Keyboard -> Shortcuts -> Input Sources -> Check both.
+- System Preferences -> Night Shift -> Schedule night light.
 - Tidy up dock and desktop icons.
-- System Preferences -> Keyboard -> Input Sources -> Add Japanese - Romaji. Ensure `Katakana` is checked.
-- System Preferences -> Shortcuts -> Input Sources -> Select both of change input sources shortcuts.
+
+Configure iTerm2:
+
+- iTerm2 -> Preferences -> Profiles -> Other Actions -> Import JSON Profiles.
+- iTerm2 -> Preferences -> Profiles -> Other Actions -> Set as Default.
+- iTerm2 -> Preferences -> Appearance -> Status Bar Location -> Bottom.
 
 Configure Windows:
 
-- Settings -> Taskbar -> Automatically Hide Taskbar in Desktop
-- Allow 'night mode' to change the color of the screen to a warmer one during sunset to sunrise.
+- Settings -> Taskbar -> Automatically Hide Taskbar in Desktop.
+- Settings -> Night Light - Configure Night Light.
 - Tidy up taskbar and desktop icons.
-- If using WSL, install Windows Terminal for better terminal experience.
+- If using WSL, install `Windows Terminal` for better terminal experience.
 
 Configure Google Chrome:
 
@@ -136,8 +143,7 @@ Configure Google Chrome:
 Configure Visual Studio Code:
 
 - Log in to Microsoft Account inside Visual Studio Code to sync all of my extensions and settings.
-- If somehow the settings are lost, you can use the exact same one in `dotfiles/.vscode/settings.json` and `dotfiles/.vscode/extensions.sh`.
-- Configure that by copying `settings.json`, and executing `sh dotfiles/.vscode/extensions.sh`.
+- My settings and extensions can be found in `dotfiles/vscode`.
 
 ## Next Steps
 
