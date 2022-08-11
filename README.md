@@ -8,7 +8,7 @@ The provisioning process is automated using [Ansible](https://www.ansible.com/),
 
 The project is structured like the following:
 
-- `dotfiles` contains my personal dotfiles for `iTerm2`, `oh-my-zsh`, and ordinary Terminal dotfiles.
+- `dotfiles` contains my personal dotfiles for `iTerm2`, `oh-my-zsh`, `vscode`, and ordinary Terminal dotfiles.
 - `scripts` contains useful scripts for performing utility matters, such as updating Homebrew cleanly.
 - `setup` contains Ansible files in order to provision / setup a device for the first time.
 
