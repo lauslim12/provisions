@@ -56,6 +56,7 @@ if [ -d ~/.oh-my-zsh ]; then
     "headline"
     "aphrodite"
     "pi"
+    "short"
   )
 
   # Start `oh-my-zsh` with a custom theme.
