@@ -10,3 +10,4 @@
 
 # Add your environment variables below.
 export ZSH="$HOME/.oh-my-zsh"
+export PATH=/Users/$(whoami)/go/bin:$PATH
