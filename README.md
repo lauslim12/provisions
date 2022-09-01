@@ -20,7 +20,6 @@ Some notes to keep in mind before provisioning your device:
 - You have to use either Darwin/Debian-based Linux.
 - I am a 'minimalist' developer. I don't really have any personal configurations other than the synchronized one in Visual Studio Code and my simple dotfiles.
 - We keep everything simple in local machine, and we can use Docker if we need more complicated tools (databases, caches, etcetera).
-- If you need to add an environment variable, instead of appending them to `.zshrc`, please append it to `exports.sh` instead (use `putenv`).
 - Several `zsh` themes are available through `oh-my-zsh`.
 
 ## Preparations
