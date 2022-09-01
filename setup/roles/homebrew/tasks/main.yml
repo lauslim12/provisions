@@ -20,7 +20,7 @@
       - gcc
       - git
       - go
-      - node@16
+      - node
       - python@3.9
 
 # Installs latest GUI applications for MacOS.
@@ -32,7 +32,6 @@
   vars:
     applications:
       - docker
-      - google-drive
       - iterm2
       - slack
       - visual-studio-code
