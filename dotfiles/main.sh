@@ -16,8 +16,8 @@
 # ease of reading.
 #
 # How to use:
-# - This file should be copied from the directory, and sourced from `.zshrc` by doing: `cp main.sh $HOME` && `echo source $HOME/main.sh >> .zshrc`.
-# - Of course you should move the renamed file to your home directory.
+# - This file should be copied from the directory, and sourced from `.zshrc` by doing: `cp main.sh $HOME/.myconfig.zsh` && `echo source $HOME/.myconfig.zsh >> .zshrc`.
+# - Of course you can change the name from `.myconfig.zsh` to the other things that you'd probably like.
 # - Restart your shell.
 ##
 

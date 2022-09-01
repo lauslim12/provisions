@@ -9,6 +9,10 @@
 - name: Install 'fzf' autocompletions
   shell: $(brew --prefix)/opt/fzf/install
 
-# Finally, inject my aliases into '.zshrc'.
-- name: Injects alias into '.zshrc' (if applicable)
-  command: cp ../dotfiles/main.sh ~/.zshrc
+# Symlink aliases.
+- name: Copy personal configuration to the user's home directory
+  command: cp ../dotfiles/main.sh ~/.myconfig.zsh
+
+# Finish everything by sourcing it from `.zshrc`.
+- name: Source personal configuration dotfile by placing a small script
+  command: echo source $HOME/.myconfig.zsh >> .zshrc
