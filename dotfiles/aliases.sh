@@ -89,10 +89,6 @@ alias brewpackages="brew leaves"
 # Preview all files in the current tree, colored with 'bat' and optimized with 'fzf'.
 alias preview="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
-# Places a key-value pair to the environment variables list (`exports.sh`). Use single quote if
-# you want to embed a variable inside a variable (nested variable; example: `export foo='$PATH'/bar`)
-alias putenv='echo "export $@" >> ~/Projects/provisions/dotfiles/exports.sh'
-
 # Prints all of the environment variables in the current Shell.
 alias path='echo -e ${PATH//:/\\n}'
 

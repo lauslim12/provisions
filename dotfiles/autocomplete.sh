@@ -55,5 +55,5 @@ _projects_autocomplete() {
 complete -F _projects_autocomplete -o nospace projects
 
 # Activate `fzf` autocompletions depending on the current Shell.
-[ ! -z "$BASH" ] && [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ ! -z "$ZSH_NAME" ] && [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ ! -z "$BASH" ] && [ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
+[ ! -z "$ZSH_NAME" ] && [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh

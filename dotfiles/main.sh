@@ -16,15 +16,14 @@
 # ease of reading.
 #
 # How to use:
-# - This file should be renamed into `.bash_aliases`, `.zshrc`, or other shells from which this dotfile
-# will be sourced automatically.
+# - This file should be copied from the directory, and sourced from `.zshrc` by doing: `cp main.sh $HOME` && `echo source $HOME/main.sh >> .zshrc`.
 # - Of course you should move the renamed file to your home directory.
 # - Restart your shell.
 ##
 
 # Define global variables and essential constants for our Shell.
-PROJECTS_DIRECTORY=~/Projects
-PROVISIONS_DIRECTORY=~/Projects/provisions
+PROJECTS_DIRECTORY=$HOME/Projects
+PROVISIONS_DIRECTORY=$HOME/Projects/provisions
 
 # Load aliases.
 if [ -f "$PROVISIONS_DIRECTORY/dotfiles/aliases.sh" ]; then
@@ -47,7 +46,7 @@ if [ -f "$PROVISIONS_DIRECTORY/dotfiles/exports.sh" ]; then
 fi
 
 # Prepare configurations for `oh-my-zsh`.
-if [ -d ~/.oh-my-zsh ]; then
+if [ -d $HOME/.oh-my-zsh ]; then
   # We load our specific `oh-my-zsh` configurations before doing anything.
   ZSH_CUSTOM="$PROVISIONS_DIRECTORY/dotfiles/oh-my-zsh"
   ZSH_THEME="random"
