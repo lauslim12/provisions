@@ -12,12 +12,3 @@
 # Finally, inject my aliases into '.zshrc'.
 - name: Injects alias into '.zshrc' (if applicable)
   command: cp ../dotfiles/main.sh ~/.zshrc
-
-# For MacOS, configure Mac's default settings.
-- name: Configure MacOS default settings (if applicable)
-  command: sh ../scripts/setup-macos.sh
-  when: ansible_facts["os_family"] == "Darwin"
-
-# Prints out message.
-- name: Finish setting up
-  command: echo "Device has been successfully set up. Please reload the shell 👍"
