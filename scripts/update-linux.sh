@@ -9,6 +9,11 @@
 
 # Main function.
 main() {
+	if [[ $OSTYPE == 'darwin'* ]]; then
+		echo "MacOS does not support this script. Please only run this script on a Linux (Debian/Ubuntu) box."
+		return 1
+	fi
+
 	sudo apt update
 	sudo apt upgrade
 	sudo apt autoremove
