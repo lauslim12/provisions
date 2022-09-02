@@ -15,4 +15,4 @@
 
 # Finish everything by sourcing it from `.zshrc`.
 - name: Source personal configuration dotfile by placing a small script
-  command: echo source $HOME/.myconfig.zsh >> .zshrc
+  command: echo "source $HOME/.myconfig.zsh" >> .zshrc
