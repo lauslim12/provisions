@@ -1,6 +1,6 @@
 .PHONY: setup
 setup:
-	cd setup && ansible-playbook --diff --verbose ansible.yml -i hostfile --ask-become-pass
+	sh ./setup/bootstrap.sh
 
 .PHONY: update-homebrew
 update-homebrew:

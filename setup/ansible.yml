@@ -1,7 +1,0 @@
----
-- hosts: all
-  roles:
-    - role: shell
-    - role: homebrew
-    - role: node
-    - role: macos

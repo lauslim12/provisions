@@ -1,8 +1,6 @@
 # Provisions
 
-This repository is my digital toolbox, a personal note to me if I ever get a new device in order to make the shifting process as swift as possible. In order to separate the concerns between personal use and development, please do not use the same device for work and personal matters (my personal preference is Windows machines for personal use and Unix systems for software engineering). I will try to avoid programming in Windows for separation of concerns between my personal life and my development life. Windows machines are simple and I don't think the process could get any more straightforward than it is already.
-
-The provisioning process is automated using [Ansible](https://www.ansible.com/), an Infrastructure-as-Code.
+This repository is my digital toolbox, a personal note to me if I ever get a new device in order to make the shifting process as swift as possible. In order to separate the concerns between personal use and development, please do not use the same device for work and personal matters (my personal preference is Windows machines for personal use and Unix systems for software engineering). I will try to avoid programming in Windows for separation of concerns between my personal life and my development life. Windows machines are simple and I don't think the process could get any more straightforward than it is already. The provisioning process is done by using Shell script(s) for portability and ease of use.
 
 ## Structure
 
@@ -10,16 +8,16 @@ The project is structured like the following:
 
 - `dotfiles` contains my personal dotfiles for `iTerm2`, `oh-my-zsh`, `vscode`, and ordinary Terminal dotfiles.
 - `scripts` contains useful scripts for performing utility matters, such as updating Homebrew cleanly.
-- `setup` contains Ansible files in order to provision / setup a device for the first time.
+- `setup` contains a script in order to provision / setup a device.
 
 ## Notes
 
 Some notes to keep in mind before provisioning your device:
 
-- Make sure you get a PC with Intel processors. Homebrew (for Linux) does not support ARM processors.
-- You have to use either Darwin/Debian-based Linux.
+- Make sure you get a PC with Intel processors. Homebrew (for Linux) does not support ARM processors. Please use either MacOS or the Debian family.
 - I am a 'minimalist' developer. I don't really have any personal configurations other than the synchronized one in Visual Studio Code and my simple dotfiles.
 - We keep everything simple in local machine, and we can use Docker if we need more complicated tools (databases, caches, etcetera).
+- The provisioning process is kept sane, that it, no files/lines will be changed if they already exist.
 - Several `zsh` themes are available through `oh-my-zsh`.
 
 ## Preparations
@@ -40,10 +38,7 @@ For MacOS:
 For Ubuntu/Linux:
 
 - Update software using `sudo apt update` and `sudo apt upgrade`.
-- Install `zsh` and set it to as the default Shell: `sudo apt install zsh` and `chsh -s $(which zsh)`.
-- You might have to `sudo apt install build-essential` for the `make` command.
-
-Remember that you can always not install all applications - you can comment out applications that you do not want to install before running `make setup`.
+- Install `build-essential` and `zsh` and set it to as the default Shell: `sudo apt install build-essential zsh` and `chsh -s $(which zsh)`.
 
 ## Setup
 
@@ -57,60 +52,43 @@ sudo apt install git
 xcode-select --install
 ```
 
-- Configure Homebrew:
+- Clone this repository in your home directory.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install ansible
-brew install git
+git clone https://github.com/lauslim12/provisions.git
 ```
 
-- Install [Google Chrome](https://www.google.com/chrome/) as a web browser.
-
-- Setup global configurations for Git. After that is done, generate [SSH key for GitHub](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). Then, [add it to your GitHub account](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). Finally, don't forget to test your connection and remember to [verify the RSA fingerprint](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/testing-your-ssh-connection).
+- Run this script, and delete the folder once you're done. You're going to use `provisions` in `$HOME/Projects/provisions` for the next parts.
 
 ```bash
-git config --global user.email <MY_GITHUB_EMAIL>
-git config --global user.name <MY_GITHUB_USERNAME>
-ssh -T git@github.com
+cd provisions && make setup
+cd .. && rm -rf provisions
 ```
 
-- Create a folder named `Projects`. This is important, as mainly the `provisions` repo will be placed inside here. If you take a look at `dotfiles/main.sh`, the path is hardcoded to this location. Don't forget to symlink the `Projects` folder to your Desktop (if necessary).
+- You can also run the script without downloading by using `curl`.
 
 ```bash
-mkdir -p ~/Projects
-ln -s ~/Projects ~/Desktop/Projects
-cd Projects
+curl https://raw.githubusercontent.com/lauslim12/provisions/HEAD/setup/bootstrap.sh | bash
 ```
 
-- Clone repository and run Ansible.
-
-```bash
-git clone git@github.com:lauslim12/provisions.git
-cd provisions
-make setup
-```
-
-- Clean up Ansible and clean up Homebrew remains.
-
-```bash
-brew remove ansible
-make update-homebrew
-make update-linux # if running a Debian-based Linux
-```
-
-## Scripts
-
-With the help of `Makefile`, several commands have been made to act as shortcuts to ease up the provisioning and update process. Make sure you are in the `provisions` folder before using these commands.
-
-- `make setup`, to setup/provision your whole device.
-- `make update-homebrew`, to update Homebrew packages.
-- `make update-linux`, to update Linux (Debian-based) with the `apt` package manager.
-- `make update-npm`, to update `npm` itself and global `npm` packages.
+- You're done! All that's left to do is doing manual configurations.
 
 ## Manual Configurations
 
-After you have configured everything in your system, it's time to do some manual works.
+After you have configured everything in your system, it's time to do some manual works (recommended to be in order):
+
+Configure Google Chrome:
+
+- Install [Google Chrome](https://www.google.com/chrome/) as a web browser.
+- Log in to all of Google Accounts and all webservices that I use.
+- Setup Google Synchronization (Contacts, Drive, Calendar, and more).
+- Change Privacy and Security to Public DNS.
+
+Configure Git:
+
+- Setup GitHub's username: `git config --global user.name <MY_GITHUB_NAME>`.
+- Setup GitHub's email: `git config --global user.email <MY_GITHUB_EMAIL>`.
+- Generate [SSH key for GitHub](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), [add it to your GitHub account](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account), and test your connection, don't remember to [verify the RSA fingerprint](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/testing-your-ssh-connection) (`ssh -T git@github.com`).
 
 Configure MacOS:
 
@@ -130,19 +108,23 @@ Configure Windows:
 
 - Settings -> Taskbar -> Automatically Hide Taskbar in Desktop.
 - Settings -> Night Light - Configure Night Light.
+- Settings -> Region and Language -> Add Language -> Add Japanese.
 - Tidy up taskbar and desktop icons.
 - If using WSL, install `Windows Terminal` for better terminal experience.
-
-Configure Google Chrome:
-
-- Log in to all of Google Accounts and all webservices that I use.
-- Setup Google Synchronization (Contacts, Drive, Calendar, and more).
-- Change Privacy and Security to Public DNS.
 
 Configure Visual Studio Code:
 
 - Log in to Microsoft Account inside Visual Studio Code to sync all of my extensions and settings.
 - My settings and extensions can be found in `dotfiles/vscode`.
+
+## Scripts
+
+With the help of `Makefile`, several commands have been made to act as shortcuts to ease up the provisioning and update process. Make sure you are in the `provisions` folder before using these commands.
+
+- `make setup`, to setup/provision your whole device.
+- `make update-homebrew`, to update Homebrew packages.
+- `make update-linux`, to update Linux (Debian-based) with the `apt` package manager.
+- `make update-npm`, to update `npm` itself and global `npm` packages.
 
 ## Next Steps
 
