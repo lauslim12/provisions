@@ -17,7 +17,7 @@ Some notes to keep in mind before provisioning your device:
 - Make sure you get a PC with Intel processors. Homebrew (for Linux) does not support ARM processors. Please use either MacOS or the Debian family.
 - I am a 'minimalist' developer. I don't really have any personal configurations other than the synchronized one in Visual Studio Code and my simple dotfiles.
 - We keep everything simple in local machine, and we can use Docker if we need more complicated tools (databases, caches, etcetera).
-- The provisioning process is kept sane, that it, no files/lines will be changed if they already exist.
+- The provisioning process is kept sane, that is, no files/lines will be changed if they already exist.
 - Several `zsh` themes are available through `oh-my-zsh`.
 
 ## Preparations
