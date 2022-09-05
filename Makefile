@@ -1,6 +1,6 @@
 .PHONY: setup
 setup:
-	sh ./setup/bootstrap.sh
+	./setup/bootstrap.sh
 
 .PHONY: update-homebrew
 update-homebrew:

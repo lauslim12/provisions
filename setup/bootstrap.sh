@@ -6,8 +6,8 @@
 # Script to set up everything on this machine. Contains specific OS settings and has guards in place to ensure that it still stays sane. In
 # order to run this script, there are several steps which you could use:
 #
-# 1. Run without downloading: curl https://raw.githubusercontent.com/lauslim12/provisions/HEAD/setup/bootstrap.sh | bash
-# 2. Run with downloading: Clone the repository, then `cd` to it, then `sh setup/bootstrap.sh`. Don't forget to delete it after you're done.
+# How to run: Clone the repository, then `cd` to it, then `make setup`. Don't forget to delete the folder after you're done. For the rest of the
+# PC lifetime, you're going to use the `provisions` in `$PROJECTS_DIRECTORY` directory.
 ##
 
 ###############################################################################
@@ -39,16 +39,6 @@ banner() {
   echo
 }
 
-# ask is used to ask a user for confirmation regarding a question.
-ask() {
-  if [[ $# -eq 0 ]]; then
-    echo "The function requires an argument, which is a string. This is a programmer's error, please tell the engineer to fix it as soon as possible."
-    exit 1
-  fi
-
-  echo "${GREEN}[♦ ♦ ♦]${RESET} $1" 
-}
-
 # message is used to print a message unique to this script, colorized and requires an argument (string).
 message() {
   if [[ $# -eq 0 ]]; then
@@ -56,7 +46,11 @@ message() {
     exit 1
   fi
 
-  echo "${GREEN}[♦ ♦ ♦]${RESET} $1"
+  if [[ $OSTYPE == 'darwin'* ]]; then
+    echo "${GREEN}[♦ ♦ ♦]${RESET} $1"
+  else
+    echo -e "${GREEN}[♦ ♦ ♦]${RESET} $1"
+  fi
 }
 
 # skip is used to print a skipped step message, unique to this script, colorized and requires an argument (string).
@@ -66,7 +60,11 @@ skip() {
     exit 1
   fi
 
-  echo "${YELLOW}[♠ ♠ ♠]${RESET} $1"
+  if [[ $OSTYPE == 'darwin'* ]]; then
+    echo "${YELLOW}[♦ ♦ ♦]${RESET} $1"
+  else
+    echo -e "${YELLOW}[♦ ♦ ♦]${RESET} $1"
+  fi
 }
 
 # todo is used to print out things that needs to be done after the whole bootstrap process is complete.
@@ -76,7 +74,11 @@ todo() {
     exit 1
   fi
 
-  echo "${BLUE}[♣ ♣ ♣]${RESET} $1"
+  if [[ $OSTYPE == 'darwin'* ]]; then
+    echo "${BLUE}[♦ ♦ ♦]${RESET} $1"
+  else
+    echo -e "${BLUE}[♦ ♦ ♦]${RESET} $1"
+  fi
 }
 
 ###############################################################################

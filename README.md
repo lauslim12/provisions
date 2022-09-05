@@ -65,12 +65,6 @@ cd provisions && make setup
 cd .. && rm -rf provisions
 ```
 
-- You can also run the script without downloading by using `curl`.
-
-```bash
-curl https://raw.githubusercontent.com/lauslim12/provisions/HEAD/setup/bootstrap.sh | bash
-```
-
 - You're done! All that's left to do is doing manual configurations.
 
 ## Manual Configurations
