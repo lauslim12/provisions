@@ -46,11 +46,7 @@ message() {
     exit 1
   fi
 
-  if [[ $OSTYPE == 'darwin'* ]]; then
-    echo "${GREEN}[♦ ♦ ♦]${RESET} $1"
-  else
-    echo -e "${GREEN}[♦ ♦ ♦]${RESET} $1"
-  fi
+  echo -e "${GREEN}[♦ ♦ ♦]${RESET} $1"
 }
 
 # skip is used to print a skipped step message, unique to this script, colorized and requires an argument (string).
@@ -60,11 +56,7 @@ skip() {
     exit 1
   fi
 
-  if [[ $OSTYPE == 'darwin'* ]]; then
-    echo "${YELLOW}[♦ ♦ ♦]${RESET} $1"
-  else
-    echo -e "${YELLOW}[♦ ♦ ♦]${RESET} $1"
-  fi
+  echo -e "${YELLOW}[♦ ♦ ♦]${RESET} $1"
 }
 
 # todo is used to print out things that needs to be done after the whole bootstrap process is complete.
@@ -74,11 +66,7 @@ todo() {
     exit 1
   fi
 
-  if [[ $OSTYPE == 'darwin'* ]]; then
-    echo "${BLUE}[♦ ♦ ♦]${RESET} $1"
-  else
-    echo -e "${BLUE}[♦ ♦ ♦]${RESET} $1"
-  fi
+  echo -e "${BLUE}[♦ ♦ ♦]${RESET} $1"
 }
 
 ###############################################################################
@@ -245,8 +233,8 @@ if [[ $OSTYPE == 'darwin'* ]]; then
   read -r -p "Confirmation needed: Do you want to set up your Mac with sensible defaults? Some companies have policies with/against this. [y|N]: " response
 
   if [[ $response =~ (y|yes|Y) ]]; then
-    message "Setting up sensible defaults for MacOS..."
-    sh ./scripts/setup-macos.sh
+    message "Setting up sensible defaults for MacOS... (you may be asked for your password)"
+    sh ./scripts/macos.sh
   else
     skip "Skipping MacOS's default configurations..."
   fi

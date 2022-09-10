@@ -115,10 +115,8 @@ Configure Visual Studio Code:
 
 With the help of `Makefile`, several commands have been made to act as shortcuts to ease up the provisioning and update process. Make sure you are in the `provisions` folder before using these commands.
 
-- `make setup`, to setup/provision your whole device.
-- `make update-homebrew`, to update Homebrew packages.
-- `make update-linux`, to update Linux (Debian-based) with the `apt` package manager.
-- `make update-npm`, to update `npm` itself and global `npm` packages.
+- `make setup`: to setup/provision your whole device.
+- `make update`: to update all software packages (`brew`, `apt`, `npm`, and things like it with sane defaults).
 
 ## Next Steps
 
