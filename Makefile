@@ -1,6 +1,6 @@
 .PHONY: setup
 setup:
-	./setup/bootstrap.sh
+	./scripts/bootstrap.sh
 
 .PHONY: update
 update:

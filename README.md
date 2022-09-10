@@ -7,8 +7,7 @@ This repository is my digital toolbox, a personal note to me if I ever get a new
 The project is structured like the following:
 
 - `dotfiles` contains my personal dotfiles for `iTerm2`, `oh-my-zsh`, `vscode`, and ordinary Terminal dotfiles.
-- `scripts` contains useful scripts for performing utility matters, such as updating Homebrew cleanly.
-- `setup` contains a script in order to provision / setup a device.
+- `scripts` contains useful scripts for performing the provisioning and the after-provisioning needs (setup, updates, and the like).
 
 ## Notes
 
@@ -55,6 +54,7 @@ xcode-select --install
 - Clone this repository in your home directory.
 
 ```bash
+cd $HOME
 git clone https://github.com/lauslim12/provisions.git
 ```
 

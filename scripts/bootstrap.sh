@@ -3,11 +3,8 @@
 ##
 # bootstrap.sh
 #
-# Script to set up everything on this machine. Contains specific OS settings and has guards in place to ensure that it still stays sane. In
-# order to run this script, there are several steps which you could use:
-#
-# How to run: Clone the repository, then `cd` to it, then `make setup`. Don't forget to delete the folder after you're done. For the rest of the
-# PC lifetime, you're going to use the `provisions` in `$PROJECTS_DIRECTORY` directory.
+# Script to set up everything on this machine. Contains specific OS settings and has guards in place to ensure that it still stays sane. If
+# you want to run this script, please follow the instructions specified in `README.md` file.
 ##
 
 ###############################################################################
