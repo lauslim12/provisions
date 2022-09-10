@@ -60,7 +60,7 @@ main() {
   fi
 
   # If applicable, we now update the `apt` package manager.
-	if [[ $OSTYPE == 'darwin'* ]] || [[ $(command -v apt) == "" ]]; then
+  if [[ $OSTYPE == 'darwin'* ]] || [[ $(command -v apt) == "" ]]; then
     message "OS is MacOS, or the 'apt' package manager does not exist and thus will not be updated."
   else
     message "The 'apt' package manager exists and is updating that right now."
