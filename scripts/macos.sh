@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ##
-# setup-macos.sh
+# macos.sh
 #
 # Script to set up my personal MacOS's configuration. This is opinionated, and of
 # course there might be a thing or two which you could improve for yourself. As an
