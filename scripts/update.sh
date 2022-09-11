@@ -25,7 +25,7 @@ aptUpdate() {
 
 # homebrewUpdate updates all `brew` command line tools.
 homebrewUpdate() {
-  brew update
+	brew update
 	brew upgrade
 	brew cleanup
 	brew autoremove
