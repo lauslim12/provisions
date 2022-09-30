@@ -51,7 +51,6 @@ if [ -d $HOME/.oh-my-zsh ]; then
   ZSH_CUSTOM="$PROVISIONS_DIRECTORY/dotfiles/oh-my-zsh"
   ZSH_THEME="random"
   ZSH_THEME_RANDOM_CANDIDATES=(
-    "passion"
     "headline"
     "aphrodite"
     "pi"
