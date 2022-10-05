@@ -69,7 +69,7 @@ fs() {
   fi;
 }
 
-# Provides information about branches and remotes the Git repository.
+# Provides information about branches and remotes regarding the current Git repository.
 gremotes() {
   is_in_git_repo || return
 
