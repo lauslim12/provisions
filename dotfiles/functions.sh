@@ -65,7 +65,7 @@ fs() {
   if [[ -n "$@" ]]; then
     du $arg -- "$@"
   else
-    du $arg .[^.]* ./*
+    du $arg *(D) ./*
   fi;
 }
 
