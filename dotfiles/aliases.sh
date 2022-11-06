@@ -87,7 +87,7 @@ alias brewpackages="brew leaves"
 ###############################################################################
 
 # Lists all files and folders with their human readable size in descending order.
-alias duls="du -sh .* * | sort -hr"
+alias duls="du -sh *(D) | sort -hr"
 
 # Preview all files in the current tree, colored with 'bat' and optimized with 'fzf'.
 alias preview="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
