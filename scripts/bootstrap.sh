@@ -134,7 +134,7 @@ brew install bat fzf gcc git go python@3.9
 # Install GUI applications (Casks) for MacOS only.
 message "Installing GUI applications for MacOS..."
 if [[ $OSTYPE == 'darwin'* ]]; then
-  brew install --cask coconutbattery docker iterm2 slack visual-studio-code zoom
+  brew install --cask docker iterm2 slack visual-studio-code zoom
 else
   skip "OS is not MacOS, skipping..."
 fi
