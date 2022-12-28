@@ -129,7 +129,7 @@ brew update && brew upgrade
 
 # Install Brew command line applications.
 message "Installing command line applications with Homebrew..."
-brew install bat fzf gcc git go python@3.9
+brew install bat fzf gcc git go pyenv
 
 # Install GUI applications (Casks) for MacOS only.
 message "Installing GUI applications for MacOS..."
