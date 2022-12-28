@@ -4,9 +4,24 @@
 # exports.sh
 #
 # Special dotfile used to place all default environment variables. This may be required when setting
-# up several applications where we need to place an additional variables.
+# up several applications where we need to place additional variables.
 ##
 
-# Add your environment variables below.
-export ZSH="$HOME/.oh-my-zsh"
+###############################################################################
+# Predefined environment variables for the usage of specific applications.    #
+###############################################################################
+
+# Go
 export PATH=/Users/$(whoami)/go/bin:$PATH
+
+# Oh My Zsh
+export ZSH="$HOME/.oh-my-zsh"
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+###############################################################################
+# Add custom environment variables below here.                                #
+###############################################################################
