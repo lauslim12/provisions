@@ -86,6 +86,13 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 ###############################################################################
+# Menu Extra                                                                  #
+###############################################################################
+
+# Show clock in this format: 'Mon, Jan 9 10:00:00' (with seconds, formal format name is "EEE d MMM HH:mm:ss").
+defaults write com.apple.menuextra.clock "DateFormat" -string "EEE d MMM HH:mm:ss"
+
+###############################################################################
 # Dock                                                                        #
 ###############################################################################
 
