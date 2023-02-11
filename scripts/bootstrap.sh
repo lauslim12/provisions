@@ -81,6 +81,13 @@ else
   exit 1
 fi
 
+# Check whether this device is a personal device or a professional device.
+if [[ $WORK == "TRUE" ]]; then
+  message "This device is provisioned for professional usage."
+else
+  message "This device is provisioned for persoanl usage."
+fi
+
 # Create `Projects` folder if it does not exist yet.
 message "Creating 'Projects' folder as the main workspace if it does not exist yet..."
 if [[ -d $PROJECTS_DIRECTORY ]]; then
