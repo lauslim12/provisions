@@ -88,8 +88,8 @@ alias brewpackages="brew leaves"
 # Lists all files and folders with their human readable size in descending order.
 alias duls="du -sh *(D) | sort -hr"
 
-# Prints all of the environment variables in the current Shell.
-alias path='echo -e ${PATH//:/\\n}'
+# Prints all of the environment variables in the current Shell with their length, in reverse-sorted order.
+alias path='echo -e ${PATH//:/\\n} | awk "{print length(\$0), \$0}" | sort -nr'
 
 # Reloads current Shell.
 alias reload="exec ${SHELL} -l"
