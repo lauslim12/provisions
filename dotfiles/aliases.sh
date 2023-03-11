@@ -113,6 +113,7 @@ alias gpush="git push -u origin"
 alias grestore="git restore --staged ."
 alias gru="git remote update --prune"
 alias gs="git status"
+alias gsw="git switch"
 
 ###############################################################################
 # Alias for Python                                                            #
