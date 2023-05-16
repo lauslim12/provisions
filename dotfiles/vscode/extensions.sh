@@ -6,6 +6,7 @@
 # Installs all of my VSCode's extensions.
 #
 # Several useful commands:
+# - To list and echo all extensions: code --list-extensions | xargs -L 1 echo code --install-extension
 # - To uninstall all extensions: code --list-extensions | xargs -L 1 code --uninstall-extension
 # - To install all extensions: bash ./vscode/extensions.sh (make sure that you're in `provisions` folder).
 ##
@@ -22,6 +23,7 @@ code --install-extension GitHub.github-vscode-theme
 code --install-extension golang.go
 code --install-extension Hyzeta.vscode-theme-github-light
 code --install-extension loilo.snazzy-light
+code --install-extension ms-python.black-formatter
 code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
 code --install-extension naumovs.color-highlight
