@@ -136,7 +136,7 @@ brew update && brew upgrade
 
 # Install Brew command line applications.
 message "Installing command line applications with Homebrew..."
-brew install fzf gcc git go pyenv
+brew install fnm fzf gcc git go pyenv
 
 # Install GUI applications (Casks) for MacOS only.
 message "Installing GUI applications for MacOS..."
@@ -161,15 +161,6 @@ brew doctor
 ###############################################################################
 
 banner "Additional Command Line Applications"
-
-# Install Node.js, managed through NVM.
-message "Installing Node.js through NVM..."
-if [[ $(command -v node) == "" ]]; then
-  message "Node.js is not installed, installing..."
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-else
-  skip "Node.js is installed, skipping..."
-fi
 
 # Install `yarn`, the package manager.
 message "Installing 'yarn', the package manager for NPM modules..."
