@@ -29,6 +29,7 @@ code --install-extension ms-python.vscode-pylance
 code --install-extension naumovs.color-highlight
 code --install-extension PKief.material-icon-theme
 code --install-extension sdras.night-owl
+code --install-extension svelte.svelte-vscode
 code --install-extension teabyii.ayu
 code --install-extension wayou.vscode-todo-highlight
 code --install-extension zhuangtongfa.material-theme
