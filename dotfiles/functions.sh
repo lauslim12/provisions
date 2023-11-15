@@ -69,26 +69,6 @@ fs() {
   fi;
 }
 
-# Provides information about branches and remotes regarding the current Git repository.
-gremotes() {
-  is_in_git_repo || return
-
-  echo '➤ git local branches'
-  git branch
-  echo ''
-  echo '➤ git remote branches'
-  git branch -r
-  echo ''
-  echo '➤ git remotes'
-  git remote -v
-  echo ''
-}
-
-# Checks whether the current repository is a Git repository or not.
-is_in_git_repo() {
-  git rev-parse HEAD >/dev/null 2>&1
-}
-
 # Loads environment file from a filename passed as an argument.
 loadenv() {
   while read line; do
