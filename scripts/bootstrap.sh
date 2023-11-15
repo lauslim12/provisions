@@ -85,7 +85,7 @@ fi
 if [[ $WORK == "TRUE" ]]; then
   message "This device is provisioned for professional usage."
 else
-  message "This device is provisioned for persoanl usage."
+  message "This device is provisioned for personal usage."
 fi
 
 # Create `Projects` folder if it does not exist yet.
