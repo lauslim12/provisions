@@ -108,6 +108,7 @@ alias gtree="git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold
 alias gm="git merge"
 alias gpull="git pull"
 alias gpush="git push -u origin"
+alias grebase="git rebase"
 alias greset="git reset"
 alias grestore="git restore"
 alias gru="git remote update --prune"
