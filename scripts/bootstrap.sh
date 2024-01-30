@@ -143,7 +143,7 @@ message "Installing GUI applications for MacOS..."
 if [[ $OSTYPE == 'darwin'* ]] && [[ $WORK == 'TRUE' ]]; then
   brew install --cask docker iterm2 slack stats visual-studio-code zoom
 elif [[ $OSTYPE == 'darwin'* ]]; then
-  brew install --cask docker iterm2 nvidia-geforce-now stats visual-studio-code whatsapp zoom
+  brew install --cask docker iterm2 stats visual-studio-code whatsapp zoom
 else
   skip "OS is not MacOS, skipping..."
 fi
