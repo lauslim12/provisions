@@ -113,8 +113,6 @@ alias grestore="git restore"
 alias gru="git remote update --prune"
 alias gs="git status"
 alias gsw="git switch"
-alias gunwip="git rev-list --max-count=1 --format="%s" HEAD | grep -q '\--wip--' && git reset HEAD~1"
-alias gwip="git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message '--wip-- [skip ci]'"
 
 ###############################################################################
 # Alias for Python                                                            #
