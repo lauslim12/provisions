@@ -7,10 +7,9 @@
 #
 # - Homebrew: updates, upgrades, deletes any unnecessary files, and check the health of our system at the end of the process.
 # - Linux: updates, upgrades, removes dependencies, and cleans the `apt` package manager.
-# - Node Package Manager: updates all global `npm` packages to the latest versions.
 #
 # This script helps to keep the machine on the bleeding edge. Despite all of this, please remember that
-# breaking changes may happen and you may have to reread the documentation of Homebrew, `apt`, and `npm` in order
+# breaking changes may happen and you may have to reread the documentation of Homebrew and `apt` in order
 # to learn about the breaking changes and how to mitigate them.
 ##
 
@@ -30,13 +29,6 @@ homebrewUpdate() {
 	brew cleanup
 	brew autoremove
 	brew doctor
-}
-
-# npmUpdate updates all `npm` packages to the latest versions.
-npmUpdate() {
-  for package in $(npm --location=global outdated --parseable --depth=0 | cut -d: -f2); do
-    npm install --location=global "$package"
-  done
 }
 
 # message prints a message to the user.
@@ -65,14 +57,6 @@ main() {
   else
     message "The 'apt' package manager exists and is updating that right now."
     aptUpdate
-  fi
-
-  # Updates all global `npm` packages to the latest versions.
-  if [[ $(command -v npm) == "" ]]; then
-    message "Node Package Manager (npm) is not installed. Will not be updated and this step is skipped."
-  else
-    message "Currently updating global 'npm' packages."
-    npmUpdate
   fi
 
   # Print success message.

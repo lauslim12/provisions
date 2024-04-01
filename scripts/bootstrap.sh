@@ -162,15 +162,6 @@ brew doctor
 
 banner "Additional Command Line Applications"
 
-# Install `yarn`, the package manager.
-message "Installing 'yarn', the package manager for NPM modules..."
-if [[ $(command -v yarn) == "" ]]; then
-  message "Package manager 'yarn' is not installed, installing..."
-  npm install --location=global yarn
-else
-  skip "Package manager 'yarn' is already installed, skipping..."
-fi
-
 # Install `oh-my-zsh` for Terminal management.
 message "Installing 'oh-my-zsh' for beautiful Terminal themes..."
 if [[ -d $HOME/.oh-my-zsh ]]; then
@@ -247,8 +238,9 @@ banner "Finishing!"
 todo "The next thing to do is that you should do the following steps (manually) to completely provision your machine:"
 todo "1. Set up Google Chrome."
 todo "2. Set up Git and SSH keys."
-todo "3. Set up other applications as described in the 'provisions' repository!"
-todo "4. If you downloaded this repository and it is not in '$PROJECTS_DIRECTORY', please delete this repository as you will not need it anymore (you will use the '$PROVISION_DIRECTORY' next time)."
+todo "3. Set up Yarn at the Fast Node Manager."
+todo "4. Set up other applications as described in the 'provisions' repository!"
+todo "5. If you downloaded this repository and it is not in '$PROJECTS_DIRECTORY', please delete this repository as you will not need it anymore (you will use the '$PROVISION_DIRECTORY' next time)."
 todo "Please do the remaining manual configurations by reading my repository and doing them all manually!"
 todo "GitHub Repository: https://github.com/lauslim12/provisions (open in your web browser)."
 
