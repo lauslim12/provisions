@@ -2,24 +2,20 @@
   "workbench.colorTheme": "Default Light+",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
-
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit"
-  },
-
   "[go]": {
     "editor.defaultFormatter": "golang.go",
     "editor.tabSize": 4
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.tabSize": 4,
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
-    }
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.tabSize": 4
   }
 }
