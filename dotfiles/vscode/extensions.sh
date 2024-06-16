@@ -12,12 +12,12 @@
 ##
 
 code --install-extension astro-build.astro-vscode
+code --install-extension charliermarsh.ruff
 code --install-extension davidanson.vscode-markdownlint
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension esbenp.prettier-vscode
 code --install-extension formulahendry.auto-rename-tag
 code --install-extension golang.go
-code --install-extension ms-python.black-formatter
 code --install-extension ms-python.debugpy
 code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
