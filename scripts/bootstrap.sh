@@ -136,14 +136,14 @@ brew update && brew upgrade
 
 # Install Brew command line applications.
 message "Installing command line applications with Homebrew..."
-brew install fnm fzf gcc git go pyenv
+brew install fnm fzf gcc git go pipx pyenv
 
 # Install GUI applications (Casks) for MacOS only.
 message "Installing GUI applications for MacOS..."
 if [[ $OSTYPE == 'darwin'* ]] && [[ $WORK == 'TRUE' ]]; then
   brew install --cask docker iterm2 slack stats visual-studio-code zoom
 elif [[ $OSTYPE == 'darwin'* ]]; then
-  brew install --cask docker iterm2 stats visual-studio-code whatsapp zoom
+  brew install --cask docker iterm2 stats visual-studio-code zoom
 else
   skip "OS is not MacOS, skipping..."
 fi
@@ -238,9 +238,10 @@ banner "Finishing!"
 todo "The next thing to do is that you should do the following steps (manually) to completely provision your machine:"
 todo "1. Set up Google Chrome."
 todo "2. Set up Git and SSH keys."
-todo "3. Set up Yarn at the Fast Node Manager."
-todo "4. Set up other applications as described in the 'provisions' repository!"
-todo "5. If you downloaded this repository and it is not in '$PROJECTS_DIRECTORY', please delete this repository as you will not need it anymore (you will use the '$PROVISION_DIRECTORY' next time)."
+todo "3. Install 'poetry' as Python package manager by using 'pipx'"
+todo "4. Install 'pnpm' package manager for Node.js as it couldn't be automated"
+todo "5. Set up other applications as described in the 'provisions' repository!"
+todo "6. If you downloaded this repository and it is not in '$PROJECTS_DIRECTORY', please delete this repository as you will not need it anymore (you will use the '$PROVISION_DIRECTORY' next time)."
 todo "Please do the remaining manual configurations by reading my repository and doing them all manually!"
 todo "GitHub Repository: https://github.com/lauslim12/provisions (open in your web browser)."
 
