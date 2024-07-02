@@ -10,6 +10,7 @@
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
+  "editor.wordWrap": "wordWrapColumn",
   "[go]": {
     "editor.defaultFormatter": "golang.go",
     "editor.tabSize": 4
