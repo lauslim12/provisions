@@ -12,6 +12,7 @@
 ##
 
 code --install-extension astro-build.astro-vscode
+code --install-extension bradlc.vscode-tailwindcss
 code --install-extension charliermarsh.ruff
 code --install-extension davidanson.vscode-markdownlint
 code --install-extension dbaeumer.vscode-eslint
