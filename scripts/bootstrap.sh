@@ -139,13 +139,19 @@ message "Installing command line applications with Homebrew..."
 brew install fnm fzf gcc git go pipx pyenv
 
 # Install GUI applications (Casks) for MacOS only.
-message "Installing GUI applications for MacOS..."
-if [[ $OSTYPE == 'darwin'* ]] && [[ $WORK == 'TRUE' ]]; then
-  brew install --cask docker iterm2 slack stats visual-studio-code zoom
-elif [[ $OSTYPE == 'darwin'* ]]; then
-  brew install --cask docker iterm2 stats visual-studio-code zoom
+message "Attempting to install GUI applications for MacOS..."
+if [[ $CASK == 'TRUE' ]]; then
+  message "Installing GUI applications for MacOS..."
+
+  if [[ $OSTYPE == 'darwin'* ]] && [[ $WORK == 'TRUE' ]]; then
+    brew install --cask docker iterm2 slack stats visual-studio-code zoom
+  elif [[ $OSTYPE == 'darwin'* ]]; then
+    brew install --cask docker iterm2 stats visual-studio-code zoom
+  else
+    skip "OS is not MacOS, skipping..."
+  fi
 else
-  skip "OS is not MacOS, skipping..."
+  skip "Homebrew Casks are not explicitly told to be installed/updated, skipping..."
 fi
 
 # Clean up Homebrew.

@@ -4,7 +4,7 @@ setup:
 
 .PHONY: setup-work
 setup-work:
-	WORK=TRUE ./scripts/bootstrap.sh
+	WORK=TRUE CASK=TRUE ./scripts/bootstrap.sh
 
 .PHONY: update
 update:
