@@ -136,7 +136,11 @@ brew update && brew upgrade
 
 # Install Brew command line applications.
 message "Installing command line applications with Homebrew..."
-brew install fnm fzf gcc git go nvim pipx pyenv ripgrep
+brew install fnm fzf gcc git go pipx pyenv
+
+# Install Brew command line applications for Neovim.
+message "Installing command line applications for Neovim support..."
+brew install lazygit nvim ripgrep
 
 # Install GUI applications (Casks) for MacOS only.
 message "Attempting to install GUI applications for MacOS..."
