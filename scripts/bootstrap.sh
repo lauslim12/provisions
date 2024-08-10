@@ -140,7 +140,7 @@ brew install fnm fzf gcc git go pipx pyenv
 
 # Install Brew command line applications for Neovim.
 message "Installing command line applications for Neovim support..."
-brew install lazygit nvim ripgrep
+brew install lazygit neovim ripgrep
 
 # Install GUI applications (Casks) for MacOS only.
 message "Attempting to install GUI applications for MacOS..."
