@@ -187,15 +187,6 @@ fi
 
 banner "Terminal"
 
-# Install `fzf` autocompletions.
-message "Installing 'fzf' autocompletions..."
-if [[ -f $HOME/.fzf.zsh ]]; then
-  skip "Terminal library 'fzf' has already had its autocompletes installed, skipping..."
-else
-  message "Installing autocompletions for `fzf`..."
-  $(brew --prefix)/opt/fzf/install
-fi
-
 # Symlink personal configurations into the user's home directory, change the name to `$DOTFILES_NAME`.
 message "Symlinking personal configurations into the user's home directory..."
 if [[ -f $HOME/$DOTFILES_NAME ]]; then
