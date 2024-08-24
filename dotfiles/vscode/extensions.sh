@@ -12,6 +12,7 @@
 ##
 
 code --install-extension astro-build.astro-vscode
+code --install-extension biomejs.biome
 code --install-extension bradlc.vscode-tailwindcss
 code --install-extension charliermarsh.ruff
 code --install-extension davidanson.vscode-markdownlint
@@ -24,4 +25,5 @@ code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
 code --install-extension naumovs.color-highlight
 code --install-extension pkief.material-icon-theme
+code --install-extension stivo.tailwind-fold
 code --install-extension wayou.vscode-todo-highlight
