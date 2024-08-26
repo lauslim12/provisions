@@ -25,5 +25,4 @@ code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
 code --install-extension naumovs.color-highlight
 code --install-extension pkief.material-icon-theme
-code --install-extension stivo.tailwind-fold
 code --install-extension wayou.vscode-todo-highlight
