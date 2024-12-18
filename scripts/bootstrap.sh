@@ -136,17 +136,19 @@ brew update && brew upgrade
 
 # Install Brew command line applications.
 message "Installing command line applications with Homebrew..."
-brew install oven-sh/bun/bun fnm fzf gcc git go uv
+brew install colima docker fnm fzf gcc git go oven-sh/bun/bun uv
 
-# Install GUI applications (Casks) for MacOS only.
+# Install GUI applications (Casks) for MacOS only. Add additional applications for work setup.
 message "Attempting to install GUI applications for MacOS..."
 if [[ $CASK == 'TRUE' ]]; then
   message "Installing GUI applications for MacOS..."
 
-  if [[ $OSTYPE == 'darwin'* ]] && [[ $WORK == 'TRUE' ]]; then
-    brew install --cask docker font-meslo-lg-nerd-font iterm2 slack stats visual-studio-code zoom
-  elif [[ $OSTYPE == 'darwin'* ]]; then
-    brew install --cask docker font-meslo-lg-nerd-font iterm2 stats visual-studio-code zoom
+  if [[ $OSTYPE == 'darwin'* ]]; then
+    brew install --cask font-meslo-lg-nerd-font iterm2 stats visual-studio-code
+
+    if [[ $WORK == 'TRUE' ]]; then
+      brew install --cask slack zoom
+    fi
   else
     skip "OS is not MacOS, skipping..."
   fi
