@@ -117,16 +117,6 @@ projects() {
   fi
 }
 
-# Creates a Python Virtual Environment (Python 3) properly. If it already exists,
-# it will source the virtual environment.
-pythonvenv() {
-  if ! [[ -d "./venv-${PWD##*/}" ]]; then
-    python3 -m venv "./venv-${PWD##*/}"
-  fi
-
-  source ./venv-${PWD##*/}/bin/activate
-}
-
 # Show how much RAM an application uses. First argument is used
 # to get the process / application.
 ram() {
