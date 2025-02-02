@@ -11,7 +11,6 @@
 # - To install all extensions: bash ./vscode/extensions.sh (make sure that you're in `provisions` folder).
 ##
 
-code --install-extension astro-build.astro-vscode
 code --install-extension biomejs.biome
 code --install-extension bradlc.vscode-tailwindcss
 code --install-extension charliermarsh.ruff
