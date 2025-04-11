@@ -60,9 +60,8 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Allow quitting via ⌘ + Q; doing so will also hide desktop icons.
 defaults write com.apple.finder QuitMenuItem -bool true
 
-# Show icons for hard drives, servers, and removable media on the desktop
+# Show icons for servers and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
