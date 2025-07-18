@@ -89,7 +89,9 @@ Configure MacOS:
 - Finder -> Preferences -> Show Home Folder in Sidebar & Show Mac.
 - System Preferences -> Keyboard -> Input Sources -> Add Japanese - Romaji.
 - System Preferences -> Keyboard -> Shortcuts -> Input Sources -> Check both.
-- System Preferences -> Night Shift -> Schedule night light.
+- System Preferences -> Appearance -> Auto.
+- System Preferences -> Displays -> Night Shift -> Schedule night light.
+- System Preferences -> Control Center -> Show `Weather` in menu bar.
 - Tidy up dock and desktop icons.
 
 Configure iTerm2:
