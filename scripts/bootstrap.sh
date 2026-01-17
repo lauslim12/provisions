@@ -136,7 +136,7 @@ brew update && brew upgrade
 
 # Install Brew command line applications.
 message "Installing command line applications with Homebrew..."
-brew install colima docker fnm fzf gcc git go oven-sh/bun/bun uv
+brew install colima docker docker-compose fnm fzf gcc git go oven-sh/bun/bun uv
 
 # Install GUI applications (Casks) for MacOS only. Add additional applications for work setup.
 message "Attempting to install GUI applications for MacOS..."
@@ -238,8 +238,9 @@ todo "The next thing to do is that you should do the following steps (manually) 
 todo "1. Set up Google Chrome."
 todo "2. Set up Git and SSH keys."
 todo "3. Install 'pnpm' package manager for Node.js as it couldn't be automated."
-todo "4. Set up other applications as described in the 'provisions' repository!"
-todo "5. If you downloaded this repository and it is not in '$PROJECTS_DIRECTORY', please delete this repository as you will not need it anymore (you will use the '$PROVISION_DIRECTORY' next time)."
+todo "4. Set up the configuration so Docker Compose can be run with Colima."
+todo "5. Set up other applications as described in the 'provisions' repository!"
+todo "6. If you downloaded this repository and it is not in '$PROJECTS_DIRECTORY', please delete this repository as you will not need it anymore (you will use the '$PROVISION_DIRECTORY' next time)."
 todo "Please do the remaining manual configurations by reading my repository and doing them all manually!"
 todo "GitHub Repository: https://github.com/lauslim12/provisions (open in your web browser)."
 
