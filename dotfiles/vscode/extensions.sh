@@ -18,10 +18,13 @@ code --install-extension davidanson.vscode-markdownlint
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension esbenp.prettier-vscode
 code --install-extension formulahendry.auto-rename-tag
+code --install-extension github.copilot
+code --install-extension github.copilot-chat
 code --install-extension golang.go
 code --install-extension ms-python.debugpy
 code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
+code --install-extension ms-python.vscode-python-envs
 code --install-extension naumovs.color-highlight
 code --install-extension pkief.material-icon-theme
 code --install-extension vue.volar
