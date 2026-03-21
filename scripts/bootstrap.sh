@@ -136,7 +136,12 @@ brew update && brew upgrade
 
 # Install Brew command line applications.
 message "Installing command line applications with Homebrew..."
-brew install colima docker docker-compose fnm fzf gcc git go oven-sh/bun/bun uv
+brew install fnm fzf gcc git mole
+
+# Install additional command line applications for work setup.
+if [[ $WORK == 'TRUE' ]]; then
+  brew install colima docker docker-compose go oven-sh/bun/bun uv
+fi
 
 # Install GUI applications (Casks) for MacOS only. Add additional applications for work setup.
 message "Attempting to install GUI applications for MacOS..."
