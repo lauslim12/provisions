@@ -130,4 +130,5 @@ With the help of `Makefile`, several commands have been made to act as shortcuts
 - You may want to install additional GUI applications, namely Tailscale, Nvidia GeForce Now, and WhatsApp.
 - Once a week, please update all dependencies by using the available commands.
 - Don't forget to check for updates for your system at all times.
+- Once in a while, you may want to run [`mo`](https://github.com/tw93/Mole) to clean, optimize, purge, and analyze especially for Mac.
 - Check the repository once in a while to update the commands and links (should be highly unlikely).
