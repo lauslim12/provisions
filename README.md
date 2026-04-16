@@ -125,8 +125,7 @@ With the help of `Makefile`, several commands have been made to act as shortcuts
 
 - Download all of essential data that might still be used from Google Drive. Keep data backed up and updated!
 - Fetch all currently being worked on projects from GitHub. Just a simple `git clone` will suffice.
-- You may have to install additional `pnpm` global packages: `npm-check-updates` and `@google/gemini-cli`.
-- You may have to install additional packages that are not version-controlled, such as Claude Code.
+- You may have to install additional `pnpm` global packages: `npm-check-updates`.
 - You may want to install additional GUI applications, namely Tailscale, Nvidia GeForce Now, and WhatsApp.
 - Once a week, please update all dependencies by using the available commands.
 - Don't forget to check for updates for your system at all times.

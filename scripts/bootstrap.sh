@@ -140,7 +140,7 @@ brew install fnm fzf gcc git mole
 
 # Install additional command line applications for work setup.
 if [[ $WORK == 'TRUE' ]]; then
-  brew install colima docker docker-compose go oven-sh/bun/bun uv
+  brew install colima docker docker-compose gemini-cli go oven-sh/bun/bun uv
 fi
 
 # Install GUI applications (Casks) for MacOS only. Add additional applications for work setup.
@@ -149,7 +149,7 @@ if [[ $CASK == 'TRUE' ]]; then
   message "Installing GUI applications for MacOS..."
 
   if [[ $OSTYPE == 'darwin'* ]]; then
-    brew install --cask font-meslo-lg-nerd-font iterm2 stats visual-studio-code
+    brew install --cask claude-code font-meslo-lg-nerd-font iterm2 stats visual-studio-code
 
     if [[ $WORK == 'TRUE' ]]; then
       brew install --cask slack zoom
